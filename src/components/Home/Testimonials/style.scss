@@ -1,0 +1,40 @@
+.home-testimonials__wrapper {
+   width: 100%;
+   padding: 0 96px;
+   position: relative;
+   margin-top: 778px;
+
+   .testimonials-inner__wrapper {
+      max-width: 1248px;
+      width: 100%;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      gap: 34px;
+
+      .title__wrapper {
+         display: flex;
+         align-items: center;
+         justify-content: center;
+
+         h2 {
+            font-size: 20px;
+            line-height: 26px;
+            text-align: center;
+         }
+      }
+
+      .logos__wrapper {
+         display: flex;
+         align-items: center;
+         justify-content: center;
+         gap: 100px;
+
+         .single-logo__item {
+            img {
+               height: auto;
+            }
+         }
+      }
+   }
+}

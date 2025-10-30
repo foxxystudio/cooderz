@@ -1,0 +1,110 @@
+.home-contact__wrapper {
+   width: 100%;
+   padding: 172px 96px 0;
+   position: relative;
+
+   .contact-inner__wrapper {
+      max-width: 1248px;
+      width: 100%;
+      margin: 0 auto;
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+
+      .content__wrapper {
+         display: flex;
+         flex-direction: column;
+         gap: 20px;
+         max-width: 460px;
+         width: 100%;
+
+         .text__wrapper {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+
+            h2 {
+               font-size: 32px;
+               line-height: 44px;
+            }
+
+            span {
+               font-size: 16px;
+               line-height: 24px;
+               color: rgba(255, 255, 255, 0.80);
+            }
+         }
+
+         .social__wrapper {
+            display: flex;
+            align-items: center;
+            gap: 24px;
+
+            .single-social__item {
+               min-width: 48px;
+               width: 48px;
+               height: 48px;
+               border-radius: 50%;
+               background: rgba(255, 255, 255, 0.10);
+               display: flex;
+               align-items: center;
+               justify-content: center;
+               cursor: pointer;
+
+               &:hover {
+                  background: linear-gradient(121deg, #0F1417 -23.57%, #3E3CFF 33.26%, #74FFF0 101.94%);
+               }
+            }
+         }
+      }
+
+      .form__wrapper {
+         max-width: 658px;
+         width: 100%;
+         padding: 40px;
+         border-radius: 30px;
+         background: linear-gradient(180deg, rgba(255, 255, 255, 0.04) 0%, rgba(255, 255, 255, 0.00) 100%);
+
+         .form-inner__wrapper {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            gap: 40px;
+
+            .single-form__field {
+               width: 100%;
+               display: flex;
+               flex-direction: column;
+               gap: 16px;
+
+               .field__title {
+                  width: 100%;
+                  display: flex;
+
+                  label {
+                     font-size: 16px;
+                     line-height: 20px;
+                     color: rgba(255, 255, 255, 0.50);
+                     cursor: pointer;
+                  }
+               }
+
+               .field-input__wrapper {
+                  width: 100%;
+                  display: flex;
+
+                  input {
+                     width: 100%;
+                     height: 52px;
+                     padding: 16px 24px;
+                     border-radius: 12px;
+                     background: rgba(255, 255, 255, 0.10);
+                     border: none;
+                     color: var(--white);
+                  }
+               }
+            }
+         }
+      }
+   }
+}

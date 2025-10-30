@@ -1,0 +1,267 @@
+:root {
+  --bg-color: #00030E;
+  --black: #000;
+  --white: #fff;
+  --font-primary: 'Inter Tight', sans-serif;
+  --font-secondary: 'Sora', sans-serif;
+  --font-code: 'Fira Code', monospace;
+}
+
+@font-face {
+  font-family: 'Inter Tight';
+  src: url('/fonts/InterTight-VariableFont_wght.ttf') format('truetype');
+  font-weight: 100 900;
+  /* variable aralığı */
+  font-display: swap;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Sora';
+  src: url('/fonts/Sora-VariableFont_wght.ttf') format('truetype');
+  font-weight: 100 900;
+  /* variable aralığı */
+  font-display: swap;
+  font-style: normal;
+}
+
+html,
+body {
+  background: var(--bg-color);
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.main__container {
+  width: 100%;
+  background: var(--bg-color);
+}
+
+.font-primary-100 {
+  font-family: var(--font-primary);
+  font-weight: 100;
+  font-optical-sizing: auto;
+  font-style: normal;
+}
+
+.font-primary-200 {
+  font-family: var(--font-primary);
+  font-weight: 200;
+  font-optical-sizing: auto;
+  font-style: normal;
+}
+
+.font-primary-300 {
+  font-family: var(--font-primary);
+  font-weight: 300;
+  font-optical-sizing: auto;
+  font-style: normal;
+}
+
+.font-primary-400 {
+  font-family: var(--font-primary);
+  font-weight: 400;
+  font-optical-sizing: auto;
+  font-style: normal;
+}
+
+.font-primary-500 {
+  font-family: var(--font-primary);
+  font-weight: 500;
+  font-optical-sizing: auto;
+  font-style: normal;
+}
+
+.font-primary-600 {
+  font-family: var(--font-primary);
+  font-weight: 600;
+  font-optical-sizing: auto;
+  font-style: normal;
+}
+
+.font-primary-700 {
+  font-family: var(--font-primary);
+  font-weight: 700;
+  font-optical-sizing: auto;
+  font-style: normal;
+}
+
+.font-primary-800 {
+  font-family: var(--font-primary);
+  font-weight: 800;
+  font-optical-sizing: auto;
+  font-style: normal;
+}
+
+.font-primary-900 {
+  font-family: var(--font-primary);
+  font-weight: 900;
+  font-optical-sizing: auto;
+  font-style: normal;
+}
+
+.font-secondary-100 {
+  font-family: var(--font-secondary);
+  font-weight: 100;
+  font-optical-sizing: auto;
+  font-style: normal;
+}
+
+.font-secondary-200 {
+  font-family: var(--font-secondary);
+  font-weight: 200;
+  font-optical-sizing: auto;
+  font-style: normal;
+}
+
+.font-secondary-300 {
+  font-family: var(--font-secondary);
+  font-weight: 300;
+  font-optical-sizing: auto;
+  font-style: normal;
+}
+
+.font-secondary-400 {
+  font-family: var(--font-secondary);
+  font-weight: 400;
+  font-optical-sizing: auto;
+  font-style: normal;
+}
+
+.font-secondary-500 {
+  font-family: var(--font-secondary);
+  font-weight: 500;
+  font-optical-sizing: auto;
+  font-style: normal;
+}
+
+.font-secondary-600 {
+  font-family: var(--font-secondary);
+  font-weight: 600;
+  font-optical-sizing: auto;
+  font-style: normal;
+}
+
+.font-secondary-700 {
+  font-family: var(--font-secondary);
+  font-weight: 700;
+  font-optical-sizing: auto;
+  font-style: normal;
+}
+
+.font-secondary-800 {
+  font-family: var(--font-secondary);
+  font-weight: 800;
+  font-optical-sizing: auto;
+  font-style: normal;
+}
+
+.font-secondary-900 {
+  font-family: var(--font-secondary);
+  font-weight: 900;
+  font-optical-sizing: auto;
+  font-style: normal;
+}
+
+.font-code-500 {
+  font-family: "Fira Code", monospace;
+  font-optical-sizing: auto;
+  font-weight: 500;
+  font-style: normal;
+}
+
+.font-white {
+  color: var(--white);
+}
+
+.font-black {
+  color: var(--black);
+}
+
+.mixed__text {
+  display: inline-block;
+
+  p {
+    display: inline;
+  }
+}
+
+/// Double Layer Text Hover Anim
+.hover-text-anim__wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+
+  .hover-text-anim__layer {
+    position: relative;
+    display: inline-flex;
+    flex-direction: column;
+    overflow: hidden;
+
+    .top,
+    .bottom {
+      position: relative;
+      display: inline-block;
+      white-space: nowrap;
+    }
+
+    .bottom {
+      position: absolute;
+      top: 0;
+      left: 0;
+    }
+  }
+}
+
+/// Btn Styles
+.btn__wrapper {
+  position: relative;
+  height: 44px;
+  border-radius: 12px;
+  transition: all 250ms ease-in;
+
+  a {
+    width: 100%;
+    height: 100%;
+  }
+
+  .btn-inner__wrapper {
+    padding: 14px 24px;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+
+    .icon__layer {
+      width: 18px;
+      height: 18px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      svg {
+        path {
+          transition: all 250ms ease-in;
+        }
+      }
+    }
+
+    span {
+      font-size: 14px;
+      line-height: 16px;
+      transition: all 250ms ease-in;
+    }
+  }
+}
+
+.btn__wrapper.bg-blue-outline {
+  background: linear-gradient(121deg, #0F1417 -23.57%, #3E3CFF 33.26%, #74FFF0 101.94%);
+  ;
+  border: 1px solid rgba(68, 62, 249, 0.75);
+}

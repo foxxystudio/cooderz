@@ -1,0 +1,170 @@
+.home-hero__wrapper {
+   width: 100%;
+   height: 819px;
+   position: absolute;
+   top: 0;
+   left: 0;
+   padding: 96px 0 0;
+
+   .hero-bg__wrapper {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 1;
+      overflow: hidden;
+
+      .lines__wrapper {
+         min-width: 1536px;
+         max-width: 100%;
+         width: 100%;
+         height: 100%;
+         position: absolute;
+         bottom: 8px;
+         left: 50%;
+         transform: translateX(-50%);
+         display: flex;
+
+         img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+         }
+      }
+
+      .gradient-top {
+         position: absolute;
+         top: 0;
+         left: 0;
+         width: 100%;
+         height: 258px;
+         background: linear-gradient(180deg, #010A2A 0%, rgba(0, 0, 0, 0.00) 100%);
+      }
+
+      .gradient-bottom {
+         position: absolute;
+         bottom: 0;
+         left: 0;
+         width: 100%;
+         height: 375px;
+         background: linear-gradient(180deg, rgba(0, 0, 0, 0.00) 0%, #010A2A 100%);
+      }
+
+      .blur-gradient__wrapper {
+         width: 890px;
+         height: 744px;
+         position: absolute;
+         top: 0;
+         left: 50%;
+         transform: translateX(-50%);
+
+         img {
+            width: 100%;
+            height: 100%;
+            filter: blur(41px);
+         }
+      }
+
+      .blur-gradient-circle__wrapper {
+         width: 1250px;
+         height: 410px;
+         position: absolute;
+         top: 195px;
+         left: 50%;
+         transform: translateX(-50%);
+         filter: blur(100px);
+
+         // img {
+         //    width: 100%;
+         //    height: 100%;
+         //    object-fit: fill;
+         //    filter: blur(100px);
+         // }
+
+         svg {
+            transform: translateY(-175px);
+            width: 100%;
+            height: auto;
+         }
+      }
+   }
+
+   .hero-inner__wrapper {
+      position: relative;
+      max-width: 1248px;
+      width: 100%;
+      margin: 0 auto;
+      padding: 0 28px 0 49px;
+      display: flex;
+      align-items: center;
+      gap: 60px;
+      z-index: 2;
+
+      .content__wrapper {
+         width: 100%;
+         display: flex;
+         flex-direction: column;
+         align-items: flex-start;
+         gap: 36px;
+
+         .text__wrapper {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+
+            h1 {
+               font-size: 48px;
+               line-height: 52px;
+            }
+
+            span {
+               font-size: 20px;
+               line-height: 32px;
+               color: #B0B0E2;
+            }
+         }
+      }
+
+      .glass__wrapper {
+         min-width: 550px;
+         width: 550px;
+         height: 550px;
+         display: flex;
+         align-items: center;
+         justify-content: center;
+         position: relative;
+
+         .glass__layer {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%) rotate(45deg);
+            min-width: 389px;
+            width: 389px;
+            height: 389px;
+            border-radius: 100px;
+            background: rgba(255, 255, 255, 0.04);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(5px);
+            /* The key property for the frosted glass effect */
+            -webkit-backdrop-filter: blur(5px);
+         }
+
+         .items__wrapper {
+            position: relative;
+            z-index: 2;
+         }
+      }
+   }
+
+   @media screen and (max-width: 1500px) {
+      .hero-bg__wrapper {
+         .lines__wrapper {
+            img {
+               object-fit: fill;
+            }
+         }
+      }
+   }
+}
