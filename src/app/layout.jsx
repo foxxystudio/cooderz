@@ -1,3 +1,4 @@
+import Footer from "@/layouts/Footer/Footer";
 import Navbar from "@/layouts/Navbar/Navbar";
 import "@/styles/globals.scss";
 import "@/styles/reset.scss";
@@ -30,6 +31,8 @@ export default function RootLayout({ children }) {
         <LenisProvider>
           {children}
         </LenisProvider>
+
+        <Footer />
       </body>
     </html>
   );

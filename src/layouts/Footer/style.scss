@@ -1,0 +1,48 @@
+footer {
+   width: 100%;
+   padding: 0 96px 42px;
+   margin-top: 96px;
+   position: relative;
+
+   .footer-inner__wrapper {
+      max-width: 1246px;
+      width: 100%;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 50px 0 0;
+      border-top: 1px solid #1A2D6F;
+
+      .terms__wrapper {
+         display: flex;
+         align-items: center;
+         gap: 20px;
+
+         .single-term__item {
+            display: flex;
+
+            span {
+               font-size: 14px;
+               line-height: 20px;
+               color: rgba(255, 255, 255, 0.50);
+               transition: all .35s ease-in;
+            }
+
+            @media screen and (min-width: 1024px) {
+               &:hover {
+                  span {
+                     color: var(--white);
+                  }
+               }
+            }
+         }
+      }
+
+      .year__text {
+         font-size: 14px;
+         line-height: 16px;
+         color: rgba(255, 255, 255, 0.50);
+      }
+   }
+}

@@ -15,12 +15,14 @@ export default function Contact() {
 
                <div className="social__wrapper">
                   <div className="single-social__item">
+                     <div className="gradient__item"></div>
                      <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
                         <path d="M5.98088 -0.406412H2.8091L17.4088 20.477H20.5806L5.98088 -0.406412ZM0 -1.96094H6.9701L13.0134 6.83407L20.5796 -1.96094H22.6445L13.9303 8.16852L23.4074 21.9609H16.4373L10.0553 12.6729L2.06504 21.9609H0L9.13835 11.3384L0 -1.96094Z" fill="white" />
                      </svg>
                   </div>
 
                   <div className="single-social__item">
+                     <div className="gradient__item"></div>
                      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="20" viewBox="0 0 24 20" fill="none">
                         <g clipPath="url(#clip0_15320_330)">
                            <path d="M6.12527 11.4228L8.71594 18.7129C8.71594 18.7129 9.03984 19.395 9.38667 19.395C9.7335 19.395 14.8921 13.939 14.8921 13.939L20.6286 2.67432L6.21771 9.54096L6.12527 11.4228Z" fill="#C8DAEA" />

@@ -98,10 +98,12 @@
       padding: 0 28px 0 49px;
       display: flex;
       align-items: center;
-      gap: 60px;
+      justify-content: center;
+      gap: 148px;
       z-index: 2;
 
       .content__wrapper {
+         max-width: 385px;
          width: 100%;
          display: flex;
          flex-direction: column;
