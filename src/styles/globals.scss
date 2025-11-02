@@ -224,10 +224,11 @@ body {
   height: 44px;
   border-radius: 12px;
   transition: all 250ms ease-in;
+  will-change: transform;
 
   @media screen and (min-width: 1024px) {
     &:hover {
-      transition: all .35s ease-in;
+      transition: all .35s ease;
       transform: scale(1.035);
     }
   }

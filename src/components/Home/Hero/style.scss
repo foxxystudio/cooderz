@@ -4,7 +4,7 @@
    position: absolute;
    top: 0;
    left: 0;
-   padding: 96px 0 0;
+   padding: 0 0 0 0;
 
    .hero-bg__wrapper {
       position: absolute;
@@ -32,61 +32,31 @@
             object-fit: cover;
          }
       }
+   }
 
-      .gradient-top {
-         position: absolute;
-         top: 0;
-         left: 0;
+   .gradient-top {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 258px;
+      background: linear-gradient(180deg, #010A2A 0%, rgba(0, 0, 0, 0.00) 100%);
+      z-index: 3;
+   }
+
+   .glows-desktop {
+      position: absolute;
+      top: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 1312px;
+      height: 280px;
+      z-index: 10;
+
+      img {
          width: 100%;
-         height: 258px;
-         background: linear-gradient(180deg, #010A2A 0%, rgba(0, 0, 0, 0.00) 100%);
-      }
-
-      .gradient-bottom {
-         position: absolute;
-         bottom: 0;
-         left: 0;
-         width: 100%;
-         height: 375px;
-         background: linear-gradient(180deg, rgba(0, 0, 0, 0.00) 0%, #010A2A 100%);
-      }
-
-      .blur-gradient__wrapper {
-         width: 890px;
-         height: 744px;
-         position: absolute;
-         top: 0;
-         left: 50%;
-         transform: translateX(-50%);
-
-         img {
-            width: 100%;
-            height: 100%;
-            filter: blur(41px);
-         }
-      }
-
-      .blur-gradient-circle__wrapper {
-         width: 1250px;
-         height: 410px;
-         position: absolute;
-         top: 195px;
-         left: 50%;
-         transform: translateX(-50%);
-         filter: blur(100px);
-
-         // img {
-         //    width: 100%;
-         //    height: 100%;
-         //    object-fit: fill;
-         //    filter: blur(100px);
-         // }
-
-         svg {
-            transform: translateY(-175px);
-            width: 100%;
-            height: auto;
-         }
+         height: 100%;
+         object-fit: cover;
       }
    }
 
@@ -95,16 +65,16 @@
       max-width: 1248px;
       width: 100%;
       margin: 0 auto;
-      padding: 0 28px 0 49px;
       display: flex;
       align-items: center;
-      justify-content: center;
-      gap: 148px;
+      justify-content: space-between;
+      gap: 56px;
       z-index: 2;
+      padding-left: 119px;
 
       .content__wrapper {
          max-width: 385px;
-         width: 100%;
+         width: 385px;
          display: flex;
          flex-direction: column;
          align-items: flex-start;
@@ -128,34 +98,26 @@
          }
       }
 
-      .glass__wrapper {
-         min-width: 550px;
-         width: 550px;
-         height: 550px;
-         display: flex;
-         align-items: center;
-         justify-content: center;
+      .hero-image__wrapper {
+         min-width: 687px;
+         width: 687px;
+         height: auto;
          position: relative;
 
-         .glass__layer {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%) rotate(45deg);
-            min-width: 389px;
-            width: 389px;
-            height: 389px;
-            border-radius: 100px;
-            background: rgba(255, 255, 255, 0.04);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            backdrop-filter: blur(5px);
-            /* The key property for the frosted glass effect */
-            -webkit-backdrop-filter: blur(5px);
+         img {
+            width: 100%;
+            height: auto;
+            object-fit: cover;
          }
 
-         .items__wrapper {
-            position: relative;
+         .hero-image-layer {
+            position: absolute;
+            top: 0;
+            left: 0;
             z-index: 2;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(270deg, #00030E 0%, rgba(0, 3, 14, 0.00) 30%), linear-gradient(270deg, rgba(0, 3, 14, 0.00) 70%, #00030E 100%), linear-gradient(180deg, rgba(0, 3, 14, 0.00) 65%, #00030E 90%);
          }
       }
    }
@@ -165,6 +127,95 @@
          .lines__wrapper {
             img {
                object-fit: fill;
+            }
+         }
+      }
+   }
+
+   @media screen and (max-width: 1200px) {
+      .hero-inner__wrapper {
+         padding: 0 16px 0 64px;
+         gap: 0;
+      }
+   }
+
+   @media screen and (max-width: 990px) {
+      .hero-inner__wrapper {
+         padding: 0 0 0 48px;
+
+         .glass__wrapper {
+            min-width: 450px;
+            width: 450px;
+            height: 450px;
+
+            .glass__layer {
+               min-width: 339px;
+               width: 339px;
+               height: 339px;
+            }
+
+            .items__wrapper {
+               top: 185px;
+               width: 125px;
+               height: 125px;
+
+               .single-glass__item {
+                  width: 125px;
+                  height: 125px;
+                  padding: 24px;
+
+                  svg {
+                     width: 100%;
+                     height: 100%;
+                  }
+
+                  &:nth-child(1) {
+                     left: -95px;
+                  }
+
+                  &:nth-child(2) {
+                     padding: 32px;
+                  }
+
+                  &:nth-child(3) {
+                     left: 95px;
+                  }
+               }
+            }
+         }
+      }
+   }
+
+   @media screen and (max-width: 768px) {
+      height: auto;
+      padding: 124px 0 24px;
+      position: relative;
+      overflow: hidden;
+
+      .hero-inner__wrapper {
+         flex-direction: column;
+         padding: 0 16px;
+         gap: 32px;
+
+         .content__wrapper {
+            align-items: center;
+            gap: 24px;
+
+            .text__wrapper {
+               align-items: center;
+               gap: 16px;
+
+               h1 {
+                  text-align: center;
+                  font-size: 32px;
+                  line-height: 38px;
+               }
+
+               span {
+                  text-align: center;
+                  font-size: 16px;
+                  line-height: 20px;
+               }
             }
          }
       }

@@ -3,6 +3,7 @@
 import Lenis from '@studio-freight/lenis';
 import { createContext, useContext, useEffect, useRef, useState } from 'react';
 import { usePathname } from 'next/navigation';
+import { useLenisStore } from '@/stores/lenisStore';
 
 const LenisContext = createContext(null);
 
@@ -16,6 +17,8 @@ export default function LenisProvider({ children }) {
    const [lenisInstance, setLenisInstance] = useState(null);
    const [isInitialLoad, setIsInitialLoad] = useState(true);
 
+   const setLenis = useLenisStore((state) => state.setLenis);
+
    useEffect(() => {
       const lenis = new Lenis({
          duration: 1.2, // Süreyi kısalttık
@@ -26,6 +29,7 @@ export default function LenisProvider({ children }) {
 
       lenisRef.current = lenis;
       setLenisInstance(lenis);
+      setLenis(lenis);
 
       let rafId;
       const raf = (time) => {

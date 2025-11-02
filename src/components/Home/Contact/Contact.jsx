@@ -9,8 +9,8 @@ export default function Contact() {
          <div className="contact-inner__wrapper">
             <div className="content__wrapper">
                <div className="text__wrapper">
-                  <h2 className='font-primary-600 font-white'>Get in touch</h2>
-                  <span className='font-primary-400 '>Let’s start your token journey today. Fill out the form or reach us on social media.</span>
+                  <h2 className='font-secondary-600 font-white'>Let’s launch together.</h2>
+                  <span className='font-primary-400'>Ready to launch? Send us a message. Fill out the form or reach us on social media.</span>
                </div>
 
                <div className="social__wrapper">

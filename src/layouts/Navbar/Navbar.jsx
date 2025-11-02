@@ -1,28 +1,78 @@
 'use client';
+import React, { useState, useRef } from 'react';
 import './style.scss';
 import DoubleLayerButtonHoverAnim from '@/components/DoubleLayerButtonHoveAnim';
 import DoubleLayerTextHoverAnim from '@/components/DoubleLayerTextHoverAnim';
 import Link from 'next/link';
-import React from 'react';
+import gsap from 'gsap';
+import { useGSAP } from '@gsap/react';
+import Menu from './Menu';
+import { useLenisStore } from '@/stores/lenisStore';
 
 const navItems = [
    {
-      title: 'Services',
-      href: '/services',
+      title: 'Partners',
+      target: '.home-testimonials__wrapper'
    },
    {
-      title: 'Partners',
-      href: '/partners'
+      title: 'Services',
+      target: '.home-what-we-offer__wrapper'
    },
    {
       title: 'Contact',
-      href: '/contact'
+      target: '.home-contact__wrapper'
    }
 ]
 
 export default function Navbar() {
+   const navbarRef = useRef(null);
+   const [menuIsActive, setMenuIsActive] = useState(false);
+   const lenis = useLenisStore((state) => state.lenis);
+
+   useGSAP(() => {
+      const ctx = gsap.context(() => {
+         const navbar = navbarRef.current;
+
+         let isDark = false;
+
+         const handleScroll = () => {
+            const scrollY = window.scrollY;
+
+            if (scrollY >= 10 && !isDark) {
+               isDark = true;
+               gsap.to(navbar, {
+                  backgroundColor: '#010A2A',
+                  duration: 0.6,
+                  ease: 'expo.out'
+               });
+            } else if (scrollY < 10 && isDark) {
+               isDark = false;
+               gsap.to(navbar, {
+                  backgroundColor: 'rgba(0,0,0,0)',
+                  duration: 0.6,
+                  ease: 'expo.out'
+               });
+            }
+         };
+
+         window.addEventListener('scroll', handleScroll);
+         return () => window.removeEventListener('scroll', handleScroll);
+      });
+
+      return () => ctx.revert();
+   }, { scope: navbarRef });
+
+   const linkClickHandler = (target) => {
+      setMenuIsActive(false);
+      if (lenis) {
+         lenis.scrollTo(target, { duration: 1, easing: (t) => 1 - Math.pow(1 - t, 3) });
+      }
+   };
+
    return (
-      <div className='navbar'>
+      <div ref={navbarRef} className='navbar'>
+         <Menu menuIsActive={menuIsActive} setMenuIsActive={setMenuIsActive} />
+         <div className="menu-layer" style={{ opacity: menuIsActive ? 1 : 0 }}></div>
 
          <div className="navbar-divider"></div>
 
@@ -47,10 +97,8 @@ export default function Navbar() {
             <div className="nav__wrapper">
                {
                   navItems.map((item, i) => (
-                     <div className="single-nav__item" key={i}>
-                        <Link href={item.href}>
-                           <DoubleLayerTextHoverAnim item={item} text={item.title} font={'font-primary-500'} color={'font-white'} />
-                        </Link>
+                     <div className="single-nav__item" onClick={() => linkClickHandler(item.target)} key={i}>
+                        <DoubleLayerTextHoverAnim item={item} text={item.title} font={'font-primary-500'} color={'font-white'} />
                      </div>
                   ))
                }
@@ -67,6 +115,15 @@ export default function Navbar() {
                   target={'_blank'}
                   icon={'arrow-right-up'}
                />
+
+               <div
+                  className={`burger__btn ${menuIsActive ? 'active' : 'inactive'}`}
+                  onClick={() => setMenuIsActive(!menuIsActive)}
+               >
+                  <div className="line line-1"></div>
+                  <div className="line line-2"></div>
+                  <div className="line line-3"></div>
+               </div>
             </div>
          </div>
       </div>

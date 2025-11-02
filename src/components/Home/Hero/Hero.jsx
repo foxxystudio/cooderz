@@ -18,60 +18,28 @@ export default function Hero() {
                   draggable={false}
                />
             </div>
-
-            <div className="blur-gradient__wrapper">
-               <Image
-                  src={'/images/home-hero/blur-gradient.png'}
-                  width={890}
-                  height={744}
-                  quality={100}
-                  alt='Cooderz'
-                  draggable={false}
-               />
-            </div>
-
-            <div className="blur-gradient-circle__wrapper">
-               {/* <Image
-                  src={'/images/home-hero/blur-gradient-circle.svg'}
-                  width={1250}
-                  height={410}
-                  quality={100}
-                  alt='Cooderz'
-                  draggable={false}
-               /> */}
-
-               <svg xmlns="http://www.w3.org/2000/svg" width="1440" height="830" viewBox="0 0 1440 830" fill="none">
-                  <g filter="url(#filter0_f_15320_221)">
-                     <path d="M100.5 195C100.5 746 1351 727.5 1351 223" stroke="url(#paint0_linear_15320_221)" strokeOpacity="0.4" strokeWidth="50" />
-                  </g>
-                  <defs>
-                     <filter id="filter0_f_15320_221" x="-124.5" y="-5" width="1700.5" height="834.82" filterUnits="userSpaceOnUse" colorInterpolationFilters="sRGB">
-                        <feFlood floodOpacity="0" result="BackgroundImageFix" />
-                        <feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape" />
-                        <feGaussianBlur stdDeviation="100" result="effect1_foregroundBlur_15320_221" />
-                     </filter>
-                     <linearGradient id="paint0_linear_15320_221" x1="-203.78" y1="103.626" x2="378.72" y2="1161.49" gradientUnits="userSpaceOnUse">
-                        <stop stopColor="#0F1417" />
-                        <stop offset="0.452776" stopColor="#3E3CFF" />
-                        <stop offset="1" stopColor="#74FFF0" />
-                     </linearGradient>
-                  </defs>
-               </svg>
-            </div>
-
-            <div className="gradient-top"></div>
-            {/* <div className="gradient-bottom"></div> */}
+         </div>
+         <div className="gradient-top"></div>
+         <div className="glows-desktop">
+            <Image
+               src={'/images/home-hero/glows-desktop.png'}
+               width={1313}
+               height={281}
+               alt='Cooderz'
+               quality={100}
+               draggable={false}
+            />
          </div>
 
          <div className="hero-inner__wrapper">
             <div className="content__wrapper">
                <div className="text__wrapper">
-                  <h1 className='font-secondary-600 font-white'>Launch better with us.</h1>
+                  <h1 className='font-secondary-600 font-white'>Launch better with Cooderz.</h1>
                   <span className='font-primary-400'>You focus on the vision. We’ll handle the rest.</span>
                </div>
 
                <DoubleLayerButtonHoverAnim
-                  text={'Book a Consultation'}
+                  text={'Launch with us'}
                   font={'font-primary-500'}
                   color={'font-white'}
                   bg={'bg-blue-outline'}
@@ -82,7 +50,19 @@ export default function Hero() {
                />
             </div>
 
-            <div className="glass__wrapper">
+            <div className="hero-image__wrapper">
+               <div className="hero-image-layer"></div>
+               <Image
+                  src={'/images/home-hero/hero-img.png'}
+                  width={1374}
+                  height={1324}
+                  alt='Cooderz'
+                  quality={100}
+                  draggable={false}
+               />
+            </div>
+
+            {/* <div className="glass__wrapper">
                <div className="glass__layer"></div>
 
                <div className="items__wrapper">
@@ -110,7 +90,7 @@ export default function Hero() {
                      </svg>
                   </div>
                </div>
-            </div>
+            </div> */}
          </div>
       </div>
    )

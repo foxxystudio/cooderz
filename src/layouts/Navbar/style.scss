@@ -6,14 +6,67 @@
    left: 0;
    z-index: 9;
    padding: 0 96px;
+   background: rgba(0, 0, 0, 0);
+   will-change: background-color;
 
    .navbar-divider {
       position: absolute;
-      bottom: -4px;
+      bottom: 0;
       left: 0;
       width: 100%;
       height: 2px;
       background: radial-gradient(144000.01% 100% at 0% 50%, rgba(1, 10, 42, 0.00) 0%, rgba(68, 62, 249, 0.25) 50%, rgba(1, 10, 42, 0.00) 100%);
+   }
+
+   .menu-layer {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100dvh;
+      background: rgba(1, 10, 42, 0.75);
+      opacity: 0;
+      transition: all .5s cubic-bezier(0.87, 0, 0.13, 1);
+      pointer-events: none;
+   }
+
+   .menu__wrapper {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: auto;
+      padding: 100px 16px 44px;
+      background: #00114C;
+      z-index: 2;
+      clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+      
+      .menu-inner__wrapper {
+         width: 100%;
+         display: flex;
+         flex-direction: column;
+         align-items: center;
+         gap: 44px;
+
+         .links__wrapper {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 20px;
+
+            .single-link__item {
+               display: flex;
+               user-select: none;
+
+               span {
+                  text-align: center;
+                  font-size: 16px;
+                  line-height: 20px;
+               }
+            }
+         }
+      }
    }
 
    .navbar-inner__wrapper {
@@ -25,6 +78,7 @@
       align-items: center;
       justify-content: space-between;
       position: relative;
+      z-index: 3;
 
       .logo__wrapper {
          display: flex;
@@ -44,20 +98,105 @@
             height: 100%;
             display: flex;
             align-items: center;
-
-            a {
-               height: 100%;
-            }
+            cursor: pointer;
 
             .hover-text-anim__wrapper {
                height: 100%;
-               
+
                .hover-text-anim__layer {
                   span {
                      font-size: 14px;
                      line-height: 16px;
                   }
                }
+            }
+         }
+      }
+
+      .nav__buttons {
+         display: flex;
+         align-items: center;
+
+         .burger__btn {
+            width: 58px;
+            height: 58px;
+            position: relative;
+            display: none;
+            margin-right: -16px;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+
+            .line {
+               position: absolute;
+               width: 18px;
+               height: 1.5px;
+               background: var(--white);
+               border-radius: 4px;
+               transition: transform .5s cubic-bezier(0.87, 0, 0.13, 1), opacity .5s cubic-bezier(0.87, 0, 0.13, 1);
+               transform-origin: center;
+            }
+
+            .line-1 {
+               transform: translateY(-6px);
+            }
+
+            .line-2 {
+               transform: translateY(0);
+            }
+
+            .line-3 {
+               transform: translateY(6px);
+            }
+
+            &.active {
+               .line-1 {
+                  transform: rotate(45deg);
+               }
+
+               .line-2 {
+                  opacity: 0;
+               }
+
+               .line-3 {
+                  transform: rotate(-45deg);
+               }
+            }
+         }
+      }
+   }
+
+   @media screen and (max-width: 1200px) {
+      padding: 0 64px;
+   }
+
+   @media screen and (max-width: 990px) {
+      padding: 0 48px;
+   }
+
+   @media screen and (max-width: 768px) {
+      padding: 0 16px;
+      height: 58px;
+
+      .navbar-inner__wrapper {
+         .logo__wrapper {
+            svg {
+               max-width: 118px;
+               width: 100%;
+            }
+         }
+
+         .nav__wrapper {
+            display: none;
+         }
+
+         .btn__wrapper {
+            display: none;
+         }
+
+         .nav__buttons {
+            .burger__btn {
+               display: flex;
             }
          }
       }
