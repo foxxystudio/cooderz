@@ -1,7 +1,10 @@
 'use client';
-import React from 'react';
+import React, { useRef } from 'react';
 import './style.scss';
 import Image from 'next/image';
+import { useGSAP } from '@gsap/react';
+import gsap from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
 const cards1 = [
    {
@@ -35,11 +38,45 @@ const cards2 = [
       width: 1456,
       height: 640
    }
-]
+];
+
+gsap.registerPlugin(ScrollTrigger);
 
 export default function WhatWeOffer() {
+   const whatWeOfferWrapper = useRef(null);
+
+   useGSAP(() => {
+      const ctx = gsap.context(() => {
+         const mainWrapper = whatWeOfferWrapper.current;
+         if (!mainWrapper) return;
+
+         const cards = gsap.utils.toArray('.single-card__layer', mainWrapper);
+         if (!cards.length) return;
+
+         cards.forEach((card, i) => {
+            gsap.fromTo(
+               card,
+               { opacity: 0 },
+               {
+                  opacity: 1,
+                  duration: .5,
+                  ease: 'power2.in',
+                  delay: i * 0.05, // küçük bir gecikme ile doğal geçiş
+                  scrollTrigger: {
+                     trigger: card,
+                     start: 'top bottom-=10%',
+                     once: true,
+                  },
+               }
+            );
+         });
+      });
+
+      return () => ctx.revert();
+   }, { scope: whatWeOfferWrapper })
+
    return (
-      <div className='home-what-we-offer__wrapper'>
+      <div ref={whatWeOfferWrapper} className='home-what-we-offer__wrapper'>
          <div className="what-we-offer-inner__section">
             <div className="title__wrapper">
                <span className='font-primary-400'>OUR SERVICES</span>

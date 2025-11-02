@@ -1,10 +1,48 @@
-import React from 'react';
+'use client';
+import React, { useRef } from 'react';
 import './style.scss';
 import Image from 'next/image';
+import { useGSAP } from '@gsap/react';
+import gsap from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
+
+gsap.registerPlugin(ScrollTrigger);
 
 export default function CodeBlock() {
+   const codeBlock = useRef(null);
+
+   useGSAP(() => {
+      const ctx = gsap.context(() => {
+         const block = codeBlock.current;
+         if (!block) return;
+
+         const texts = gsap.utils.toArray('.code-anim-block', block);
+         if (!texts.length) return;
+
+         texts.forEach((text, i) => {
+            gsap.fromTo(
+               text,
+               { opacity: 0 },
+               {
+                  opacity: 1,
+                  duration: 0.5,
+                  ease: 'power2.inOut',
+                  delay: i * 0.25, // küçük bir gecikme ile doğal geçiş
+                  scrollTrigger: {
+                     trigger: text,
+                     start: 'top bottom-=10%',
+                     once: true,
+                  },
+               }
+            );
+         });
+      });
+
+      return () => ctx.revert();
+   }, { scope: codeBlock })
+
    return (
-      <div className='home-code-block__wrapper'>
+      <div ref={codeBlock} className='home-code-block__wrapper'>
          <div className="code-block-inner__wrapper">
             <div className="code-block__wrapper">
                <div className="header__wrapper">
@@ -51,33 +89,33 @@ export default function CodeBlock() {
 
                   <div className="top-buttons__wrapper">
                      <div className="single-top__btn">
-                        <span className='font-code-500 font-white'>SYSTEM_STATUS: ONLINE</span>
+                        <span className='font-code-500 font-white'>SYSTEM_STATUS: <p>ONLINE</p></span>
                      </div>
 
                      <div className="right__buttons">
                         <div className="single-top__btn">
-                           <span className='font-code-500 font-white'>BUILDER MODE: ACTIVE</span>
+                           <span className='font-code-500 font-white'>BUILDER MODE: <p>ACTIVE</p></span>
                         </div>
 
                         <div className="single-top__btn">
-                           <span className='font-code-500 font-white'>DESIGN_AI: READY</span>
+                           <span className='font-code-500 font-white'>DESIGN_AI: <p>READY</p></span>
                         </div>
                      </div>
                   </div>
                </div>
 
                <div className="text__block">
-                  <span className='font-code-500 font-white'>user@cooderz:~$ init_dev_mode --full_stack --creative<br />
+                  <span className='font-code-500 font-white'><p className='color-change'>user@cooderz</p>:~$ init_dev_mode --full_stack --creative <p className="text-anim"></p><br />
                      Initializing Cooderz full-stack development environment...<br /><br />
 
-                     [✓] Frontend_modules loaded<br />
-                     [✓] Backend_apis connected<br />
-                     [✓] Design_system integrated<br />
-                     [✓] Database linked<br />
-                     [✓] Build_pipeline optimized<br />
-                     [✓] Deployment_ready<br /><br />
+                     <div className='code-anim-block'><p className='color-change'>[✓]</p> Frontend_modules loaded</div><br />
+                     <div className='code-anim-block'><p className='color-change'>[✓]</p> Backend_apis connected</div><br />
+                     <div className='code-anim-block'><p className='color-change'>[✓]</p> Design_system integrated</div><br />
+                     <div className='code-anim-block'><p className='color-change'>[✓]</p> Database linked</div><br />
+                     <div className='code-anim-block'><p className='color-change'>[✓]</p> Build_pipeline optimized</div><br />
+                     <div className='code-anim-block'><p className='color-change'>[✓]</p> Deployment_ready</div><br /><br />
 
-                     System ready. Code. Create. Cooderz.</span>
+                     <p className='color-change'>System ready. Code. Create. Cooderz.</p></span>
                </div>
             </div>
          </div>

@@ -92,6 +92,10 @@
             h1 {
                font-size: 48px;
                line-height: 52px;
+               background: linear-gradient(118deg, #626984 -3.24%, #FFF 50.67%);
+               background-clip: text;
+               -webkit-background-clip: text;
+               -webkit-text-fill-color: transparent;
             }
 
             span {

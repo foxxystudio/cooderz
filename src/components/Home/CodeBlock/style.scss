@@ -79,6 +79,12 @@
                   span {
                      font-size: 14px;
                      line-height: 18px;
+                     display: inline-block;
+
+                     p {
+                        display: inline;
+                        color: #2580F6;
+                     }
                   }
                }
 
@@ -102,6 +108,37 @@
             span {
                font-size: 15px;
                line-height: 24px;
+               display: inline-block;
+
+               p, .code-anim-block {
+                  display: inline;
+               }
+
+               .color-change {
+                  display: inline;
+                  color: #2580F6;
+               }
+
+               .text-anim {
+                  width: 8px;
+                  height: 16px;
+                  background: #2580F6;
+                  display: inline-block;
+                  vertical-align: middle;
+                  animation: pointAnim .5s linear infinite;
+               }
+
+               @keyframes pointAnim {
+                  0% {
+                     opacity: 0;
+                  }
+                  50% {
+                     opacity: 1;
+                  }
+                  100% {
+                     opacity: 0;
+                  }
+               }
             }
          }
       }
