@@ -8,114 +8,114 @@ import { useGSAP } from '@gsap/react';
 const logos = [
    {
       src: '/images/testimonials-logos/1.png',
-      width: 64,
-      height: 64
+      width: 196,
+      height: 196
    },
    {
       src: '/images/testimonials-logos/2.png',
-      width: 64,
-      height: 64
+      width: 196,
+      height: 196
    },
    {
       src: '/images/testimonials-logos/3.png',
-      width: 64,
-      height: 64
+      width: 196,
+      height: 196
    },
    {
       src: '/images/testimonials-logos/4.png',
-      width: 64,
-      height: 64
+      width: 196,
+      height: 196
    },
    {
       src: '/images/testimonials-logos/5.png',
-      width: 64,
-      height: 64
+      width: 196,
+      height: 196
    },
    {
       src: '/images/testimonials-logos/6.png',
-      width: 64,
-      height: 64
+      width: 196,
+      height: 196
    },
    {
       src: '/images/testimonials-logos/7.png',
-      width: 64,
-      height: 64
+      width: 196,
+      height: 196
    },
    {
       src: '/images/testimonials-logos/8.png',
-      width: 64,
-      height: 64
+      width: 196,
+      height: 196
    },
    {
       src: '/images/testimonials-logos/9.png',
-      width: 64,
-      height: 64
+      width: 196,
+      height: 196
    },
    {
       src: '/images/testimonials-logos/10.png',
-      width: 64,
-      height: 64
+      width: 196,
+      height: 196
    },
    {
       src: '/images/testimonials-logos/11.png',
-      width: 64,
-      height: 64
+      width: 196,
+      height: 196
    },
    {
       src: '/images/testimonials-logos/1.png',
-      width: 64,
-      height: 64
+      width: 196,
+      height: 196
    },
    {
       src: '/images/testimonials-logos/2.png',
-      width: 64,
-      height: 64
+      width: 196,
+      height: 196
    },
    {
       src: '/images/testimonials-logos/3.png',
-      width: 64,
-      height: 64
+      width: 196,
+      height: 196
    },
    {
       src: '/images/testimonials-logos/4.png',
-      width: 64,
-      height: 64
+      width: 196,
+      height: 196
    },
    {
       src: '/images/testimonials-logos/5.png',
-      width: 64,
-      height: 64
+      width: 196,
+      height: 196
    },
    {
       src: '/images/testimonials-logos/6.png',
-      width: 64,
-      height: 64
+      width: 196,
+      height: 196
    },
    {
       src: '/images/testimonials-logos/7.png',
-      width: 64,
-      height: 64
+      width: 196,
+      height: 196
    },
    {
       src: '/images/testimonials-logos/8.png',
-      width: 64,
-      height: 64
+      width: 196,
+      height: 196
    },
    {
       src: '/images/testimonials-logos/9.png',
-      width: 64,
-      height: 64
+      width: 196,
+      height: 196
    },
    {
       src: '/images/testimonials-logos/10.png',
-      width: 64,
-      height: 64
+      width: 196,
+      height: 196
    },
    {
       src: '/images/testimonials-logos/11.png',
-      width: 64,
-      height: 64
-   }
+      width: 196,
+      height: 196
+   },
 ]
 
 export default function Testimonials() {

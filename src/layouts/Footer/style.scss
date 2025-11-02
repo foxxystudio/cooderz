@@ -46,4 +46,21 @@ footer {
          color: rgba(255, 255, 255, 0.50);
       }
    }
+
+   @media screen and (max-width: 1200px) {
+      padding: 0 64px 48px;
+   }
+
+   @media screen and (max-width: 990px) {
+      padding: 0 48px 48px;
+   }
+
+   @media screen and (max-width: 768px) {
+      padding: 0 16px 24px;
+
+      .footer-inner__wrapper {
+         flex-direction: column;
+         gap: 32px;
+      }
+   }
 }

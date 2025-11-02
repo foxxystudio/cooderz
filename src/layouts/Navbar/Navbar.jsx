@@ -38,14 +38,14 @@ export default function Navbar() {
          const handleScroll = () => {
             const scrollY = window.scrollY;
 
-            if (scrollY >= 10 && !isDark) {
+            if (scrollY >= 100 && !isDark) {
                isDark = true;
                gsap.to(navbar, {
                   backgroundColor: '#00030E',
                   duration: 0.6,
                   ease: 'expo.out'
                });
-            } else if (scrollY < 10 && isDark) {
+            } else if (scrollY < 100 && isDark) {
                isDark = false;
                gsap.to(navbar, {
                   backgroundColor: 'rgba(0,0,0,0)',

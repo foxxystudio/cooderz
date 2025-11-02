@@ -8,7 +8,7 @@ import { useLenisStore } from '@/stores/lenisStore';
 const LenisContext = createContext(null);
 
 export function useLenis() {
-  return useContext(LenisContext);
+   return useContext(LenisContext);
 }
 
 export default function LenisProvider({ children }) {
@@ -56,29 +56,10 @@ export default function LenisProvider({ children }) {
    }, []);
 
    useEffect(() => {
-      if (isInitialLoad) {
-         // İlk sayfa yüklendiğinde direkt scroll to 0
-         if (lenisRef.current) {
-            lenisRef.current.scrollTo(0, { immediate: true });
-         } else {
-            window.scrollTo(0, 0);
-         }
-         setIsInitialLoad(false);
+      if (lenisRef.current) {
+         lenisRef.current.scrollTo(0, { immediate: true });
       } else {
-         // Sayfa değişimlerinde 0.5s gecikmeyle scroll sıfırla
-         if (lenisRef.current) {
-            const timeout = setTimeout(() => {
-               lenisRef.current.scrollTo(0, { immediate: true });
-            }, 500);
-
-            return () => clearTimeout(timeout);
-         } else {
-            const timeout = setTimeout(() => {
-               window.scrollTo(0, 0);
-            }, 500);
-
-            return () => clearTimeout(timeout);
-         }
+         window.scrollTo(0, 0);
       }
    }, [pathname, isInitialLoad]);
 

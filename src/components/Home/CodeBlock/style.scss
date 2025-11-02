@@ -1,6 +1,6 @@
 .home-code-block__wrapper {
    width: 100%;
-   padding: 267px 96px 0;
+   padding: 172px 96px 0;
    position: relative;
    overflow: hidden;
 
@@ -65,6 +65,7 @@
                align-items: center;
                justify-content: space-between;
                gap: 16px;
+               flex-wrap: wrap;
 
                .single-top__btn {
                   height: 34px;
@@ -74,6 +75,11 @@
                   border-radius: 8px;
                   border: 1px solid rgba(255, 255, 255, 0.10);
                   background: rgba(255, 255, 255, 0.05);
+
+                  span {
+                     font-size: 14px;
+                     line-height: 18px;
+                  }
                }
 
                .right__buttons {
@@ -92,6 +98,77 @@
             border-radius: 8px;
             border: 1px solid rgba(255, 255, 255, 0.10);
             background: rgba(255, 255, 255, 0.05);
+
+            span {
+               font-size: 15px;
+               line-height: 24px;
+            }
+         }
+      }
+   }
+
+   @media screen and (max-width: 1200px) {
+      padding: 172px 64px 0;
+   }
+
+   @media screen and (max-width: 990px) {
+      padding: 172px 48px 0;
+   }
+
+   @media screen and (max-width: 768px) {
+      padding: 96px 16px 0;
+
+      .code-block-inner__wrapper {
+         .code-block__wrapper {
+            padding: 16px;
+            gap: 20px;
+            border-radius: 12px;
+
+            .header__wrapper {
+               gap: 20px;
+
+               .top-nav__wrapper {
+                  .left__items {
+                     gap: 12px;
+
+                     .options-block {
+                        gap: 6px;
+                     }
+                  }
+
+                  .right__items {
+                     width: 112px;
+
+                     svg {
+                        max-height: 18px;
+                        width: auto;
+                     }
+                  }
+               }
+
+               .top-buttons__wrapper {
+                  gap: 12px;
+
+                  .single-top__btn {
+                     padding: 4px 8px;
+                     height: 28px;
+                  }
+
+                  .right__buttons {
+                     gap: 12px;
+                     flex-wrap: wrap;
+                  }
+               }
+            }
+
+            .text__block {
+               padding: 12px;
+
+               span {
+                  font-size: 14px;
+                  line-height: 20px;
+               }
+            }
          }
       }
    }

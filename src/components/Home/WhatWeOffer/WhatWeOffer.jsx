@@ -8,15 +8,15 @@ const cards1 = [
       title: 'Token Creation & Contract Setup',
       desc: 'From token logic to smart contracts, we handle the tech part so you can focus on the launch. Everything built to run smoothly from day one.',
       img: '/images/what-we-offer/1.png',
-      width: 728,
-      height: 320
+      width: 1456,
+      height: 640
    },
    {
       title: 'Launch Strategy & Deployment',
       desc: 'We help you shape your launch plan and take care of everything technical — contracts, setup, and deployment.',
       img: '/images/what-we-offer/2.png',
-      width: 500,
-      height: 320
+      width: 1000,
+      height: 640
    },
 ];
 
@@ -25,15 +25,15 @@ const cards2 = [
       title: 'Post-Launch Support & Growth Engineering',
       desc: 'We monitor, optimize, and upgrade. Think of us as your long-term tech team, keeping everything running.',
       img: '/images/what-we-offer/3.png',
-      width: 500,
-      height: 320
+      width: 1000,
+      height: 640
    },
    {
       title: 'Custom Tools & Automations',
       desc: 'Need something specific for your token? We build bots, scripts, and dapps that automate and simplify your workflow.',
       img: '/images/what-we-offer/4.png',
-      width: 728,
-      height: 320
+      width: 1456,
+      height: 640
    }
 ]
 

@@ -1,7 +1,7 @@
 .home-what-we-offer__wrapper {
    width: 100%;
    position: relative;
-   padding: 151px 96px 0;
+   padding: 172px 96px 0;
 
    .what-we-offer-inner__section {
       max-width: 1248px;
@@ -56,6 +56,7 @@
                   width: 1930px;
                   height: 1425px;
                   opacity: .6;
+                  pointer-events: none;
 
                   img {
                      width: 100%;
@@ -120,6 +121,47 @@
 
                      .ligth-effect__wrapper {
                         right: -930px;
+                     }
+                  }
+               }
+            }
+         }
+      }
+   }
+
+   @media screen and (max-width: 1200px) {
+      padding: 172px 64px 0;
+   }
+
+   @media screen and (max-width: 990px) {
+      padding: 172px 48px 0;
+   }
+
+   @media screen and (max-width: 768px) {
+      padding: 96px 16px 0;
+
+      .what-we-offer-inner__section {
+         .cards__wrapper {
+            .cards-row__wrapper {
+               flex-direction: column;
+
+               .single-card__layer {
+                  max-width: 100% !important;
+                  border-radius: 12px;
+
+                  .ligth-effect__wrapper {
+                     right: -850px !important;
+                  }
+
+                  .single-card__item {
+                     border-radius: 12px;
+                     
+                     .card-image__wrapper {
+                        height: 220px;
+                     }
+
+                     .card-content__wrapper {
+                        padding: 16px;
                      }
                   }
                }
