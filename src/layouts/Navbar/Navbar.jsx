@@ -41,7 +41,7 @@ export default function Navbar() {
             if (scrollY >= 10 && !isDark) {
                isDark = true;
                gsap.to(navbar, {
-                  backgroundColor: '#010A2A',
+                  backgroundColor: '#00030E',
                   duration: 0.6,
                   ease: 'expo.out'
                });
@@ -72,7 +72,7 @@ export default function Navbar() {
    return (
       <div ref={navbarRef} className='navbar'>
          <Menu menuIsActive={menuIsActive} setMenuIsActive={setMenuIsActive} />
-         <div className="menu-layer" style={{ opacity: menuIsActive ? 1 : 0 }}></div>
+         <div className="menu-layer" style={{ opacity: menuIsActive ? 1 : 0, pointerEvents: menuIsActive ? 'all' : 'none' }} onClick={() => setMenuIsActive(false)}></div>
 
          <div className="navbar-divider"></div>
 
