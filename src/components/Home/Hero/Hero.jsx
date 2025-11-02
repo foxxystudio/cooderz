@@ -25,15 +25,15 @@ export default function Hero() {
          gsap.set(heroBtn, { opacity: 0, transition: 0 });
          gsap.set(heroImg, { opacity: 0 });
 
-         const anim1 = gsap.from(heroTitle, {
-            opacity: 0,
+         const anim1 = gsap.to(heroTitle, {
+            opacity: 1,
             duration: .5,
             ease: 'power2.inOut',
             stagger: 0.035
          });
 
-         const anim2 = gsap.from(heroDesc, {
-            opacity: 0,
+         const anim2 = gsap.to(heroDesc, {
+            opacity: 1,
             duration: .5,
             ease: 'power2.inOut',
             stagger: 0.015,

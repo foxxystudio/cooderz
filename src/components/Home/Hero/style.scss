@@ -96,13 +96,19 @@
                background-clip: text;
                -webkit-background-clip: text;
                -webkit-text-fill-color: transparent;
+               opacity: 0;
             }
 
             span {
                font-size: 20px;
                line-height: 32px;
                color: #B0B0E2;
+               opacity: 0;
             }
+         }
+
+         .btn__wrapper {
+            opacity: 0;
          }
       }
 
@@ -112,6 +118,7 @@
          height: 662px;
          position: relative;
          display: flex;
+         opacity: 0;
 
          img {
             width: 100%;

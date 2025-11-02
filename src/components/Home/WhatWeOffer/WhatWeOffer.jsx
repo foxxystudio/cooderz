@@ -53,23 +53,23 @@ export default function WhatWeOffer() {
          const cards = gsap.utils.toArray('.single-card__layer', mainWrapper);
          if (!cards.length) return;
 
-         cards.forEach((card, i) => {
-            gsap.fromTo(
-               card,
-               { opacity: 0 },
-               {
-                  opacity: 1,
-                  duration: .5,
-                  ease: 'power2.in',
-                  delay: i * 0.05, // küçük bir gecikme ile doğal geçiş
-                  scrollTrigger: {
-                     trigger: card,
-                     start: 'top bottom-=10%',
-                     once: true,
-                  },
-               }
-            );
-         });
+         // cards.forEach((card, i) => {
+         //    gsap.fromTo(
+         //       card,
+         //       { opacity: 0 },
+         //       {
+         //          opacity: 1,
+         //          duration: .5,
+         //          ease: 'power2.in',
+         //          delay: i * 0.05, // küçük bir gecikme ile doğal geçiş
+         //          scrollTrigger: {
+         //             trigger: card,
+         //             start: 'top bottom-=10%',
+         //             once: true,
+         //          },
+         //       }
+         //    );
+         // });
       });
 
       return () => ctx.revert();
