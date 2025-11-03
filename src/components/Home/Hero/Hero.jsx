@@ -101,7 +101,7 @@ export default function Hero() {
          <div className="hero-inner__wrapper">
             <div className="content__wrapper">
                <div className="text__wrapper">
-                  <h1 className='font-secondary-600 font-white'>Launch better with Cooderz.</h1>
+                  <h1 className='font-secondary-600 font-white'>Launch better.</h1>
                   <span className='font-primary-400'>You focus on the vision. We’ll handle the rest.</span>
                </div>
 

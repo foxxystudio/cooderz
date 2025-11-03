@@ -2,6 +2,25 @@
    width: 100%;
    position: relative;
    margin-top: 778px;
+   overflow: hidden;
+
+   .gradient-layer {
+      position: absolute;
+      bottom: 0;
+      width: 500px;
+      height: 177px;
+      z-index: 2;
+   }
+
+   .gradient-left {
+      left: 0;
+      background: linear-gradient(90deg, #00030E 15%, rgba(0, 3, 14, 0.00) 100%);
+   }
+
+   .gradient-right {
+      right: 0;
+      background: linear-gradient(90deg, rgba(0, 3, 14, 0.00) 0%, #00030E 85%);
+   }
 
    .testimonials-inner__wrapper {
       width: 100%;
@@ -13,8 +32,16 @@
       .title__wrapper {
          padding: 0 96px;
          display: flex;
+         flex-direction: column;
+         gap: 12px;
          align-items: center;
          justify-content: center;
+
+         span {
+            font-size: 16px;
+            line-height: 24px;
+            color: rgba(255, 255, 255, 0.80);
+         }
 
          h2 {
             font-size: 20px;
@@ -48,9 +75,23 @@
    @media screen and (max-width: 768px) {
       margin-top: 0;
 
+      .gradient-left {
+         left: -250px;
+      }
+
+      .gradient-right {
+         right: -250px;
+      }
+
       .testimonials-inner__wrapper {
          .title__wrapper {
             padding: 0 16px;
+            gap: 8px;
+
+            span {
+               font-size: 14px;
+               line-height: 20px;
+            }
 
             h2 {
                font-size: 16px;

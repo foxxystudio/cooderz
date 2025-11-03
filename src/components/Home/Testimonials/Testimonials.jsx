@@ -42,6 +42,11 @@ const logos = [
       height: 196
    },
    {
+      src: '/images/testimonials-logos/12.png',
+      width: 196,
+      height: 196
+   },
+   {
       src: '/images/testimonials-logos/8.png',
       width: 196,
       height: 196
@@ -97,6 +102,11 @@ const logos = [
       height: 196
    },
    {
+      src: '/images/testimonials-logos/12.png',
+      width: 196,
+      height: 196
+   },
+   {
       src: '/images/testimonials-logos/8.png',
       width: 196,
       height: 196
@@ -144,8 +154,12 @@ export default function Testimonials() {
 
    return (
       <div ref={testimonialsRef} className='home-testimonials__wrapper'>
+         <div className="gradient-left gradient-layer"></div>
+         <div className="gradient-right gradient-layer"></div>
+
          <div className="testimonials-inner__wrapper">
             <div className="title__wrapper">
+               <span className='font-primary-400'>PARTNERS</span>
                <h2 className='font-primary-500 font-white'>A few of the projects we’ve joined forces with, building tools, launches, and results together.</h2>
             </div>
 

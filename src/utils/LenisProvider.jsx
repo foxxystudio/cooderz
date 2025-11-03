@@ -61,7 +61,7 @@ export default function LenisProvider({ children }) {
       } else {
          window.scrollTo(0, 0);
       }
-   }, [pathname, isInitialLoad]);
+   }, [pathname]);
 
    return (
       <LenisContext.Provider value={lenisInstance}>

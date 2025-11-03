@@ -28,6 +28,10 @@
             h2 {
                font-size: 32px;
                line-height: 44px;
+               background: linear-gradient(118deg, #626984 -3.24%, #FFF 50.67%);
+               background-clip: text;
+               -webkit-background-clip: text;
+               -webkit-text-fill-color: transparent;
             }
 
             span {
@@ -78,6 +82,7 @@
                      }
                   }
                }
+
                // &:hover {
                //    background: linear-gradient(121deg, #0F1417 -23.57%, #3E3CFF 33.26%, #74FFF0 101.94%);
                // }
