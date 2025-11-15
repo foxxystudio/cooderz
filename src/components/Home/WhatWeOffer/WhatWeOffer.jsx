@@ -182,7 +182,7 @@ export default function WhatWeOffer() {
 
    return (
       <div ref={whatWeOfferWrapper} className='home-what-we-offer__wrapper'>
-         <div className="what-we-offer-inner__section">
+         <div className="what-we-offer-inner__wrapper">
             <div className="title__wrapper">
                <span className='font-primary-400'>OUR SERVICES</span>
                <h2 className='font-secondary-600 font-white'>What We Offer</h2>

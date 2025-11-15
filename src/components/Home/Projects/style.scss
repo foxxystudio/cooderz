@@ -1,9 +1,9 @@
-.home-what-we-offer__wrapper {
+.home-projects__wrapper {
    width: 100%;
    position: relative;
    padding: 172px 96px 0;
 
-   .what-we-offer-inner__wrapper {
+   .projects-inner__wrapper {
       max-width: 1248px;
       width: 100%;
       margin: 0 auto;
@@ -22,8 +22,8 @@
             font-size: 16px;
             line-height: 24px;
             color: rgba(255, 255, 255, 0.80);
-            opacity: 0;
-            filter: blur(10px);
+            // opacity: 0;
+            // filter: blur(10px);
             will-change: opacity;
          }
 
@@ -34,8 +34,8 @@
             background-clip: text;
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
-            opacity: 0;
-            filter: blur(10px);
+            // opacity: 0;
+            // filter: blur(10px);
             will-change: opacity, filter;
          }
       }
@@ -54,50 +54,11 @@
             .single-card__layer {
                width: 100%;
                padding: 1px;
-               background: linear-gradient(0, rgba(255, 255, 255, 0.2) 0%, rgba(255, 255, 255, 0.00) 100%);
-               border-radius: 20px;
                overflow: hidden;
                position: relative;
-               opacity: 0;
+               background: transparent;
+               // opacity: 0;
                will-change: opacity;
-               --mouse-x: 50%;
-               --mouse-y: 50%;
-
-               &:hover::before,
-               &:focus-within::before {
-                  opacity: 0.6;
-               }
-
-               &::before {
-                  content: '';
-                  position: absolute;
-                  top: 0;
-                  left: 0;
-                  right: 0;
-                  bottom: 0;
-                  background: radial-gradient(circle at var(--mouse-x) var(--mouse-y), #EDEDED, transparent 60%);
-                  opacity: 0;
-                  transition: opacity .5s ease-in;
-                  pointer-events: none;
-                  z-index: 2;
-               }
-
-               .ligth-effect__wrapper {
-                  position: absolute;
-                  top: -700px;
-                  right: -702px;
-                  width: 1930px;
-                  height: 1425px;
-                  opacity: .6;
-                  pointer-events: none;
-                  z-index: 2;
-                  transition: all 500ms ease-in;
-
-                  img {
-                     width: 100%;
-                     height: 100%;
-                  }
-               }
 
                &:hover .ligth-effect__wrapper {
                   opacity: 0;
@@ -113,6 +74,46 @@
                      width: 100%;
                      height: 320px;
                      overflow: hidden;
+                     border-radius: 20px;
+                     position: relative;
+                     --mouse-x: 50%;
+                     --mouse-y: 50%;
+
+                     &:hover::before,
+                     &:focus-within::before {
+                        opacity: 0.6;
+                     }
+
+                     &::before {
+                        content: '';
+                        position: absolute;
+                        top: 0;
+                        left: 0;
+                        right: 0;
+                        bottom: 0;
+                        background: radial-gradient(circle at var(--mouse-x) var(--mouse-y), #EDEDED, transparent 60%);
+                        opacity: 0;
+                        transition: opacity .5s ease-in;
+                        pointer-events: none;
+                        z-index: 2;
+                     }
+
+                     .ligth-effect__wrapper {
+                        position: absolute;
+                        top: -700px;
+                        right: -702px;
+                        width: 1930px;
+                        height: 1425px;
+                        opacity: .6;
+                        pointer-events: none;
+                        z-index: 2;
+                        transition: all 500ms ease-in;
+
+                        img {
+                           width: 100%;
+                           height: 100%;
+                        }
+                     }
 
                      img {
                         width: 100%;
@@ -123,26 +124,17 @@
                   }
 
                   .card-content__wrapper {
-                     padding: 32px;
                      width: 100%;
                      display: flex;
                      flex-direction: column;
                      gap: 12px;
+                     padding: 24px 0;
 
                      h5 {
                         font-size: 20px;
                         line-height: 28px;
-                        opacity: 0;
-                        filter: blur(10px);
-                        will-change: opacity, filter;
-                     }
-
-                     span {
-                        font-size: 14px;
-                        line-height: 24px;
-                        color: rgba(255, 255, 255, 0.50);
-                        opacity: 0;
-                        filter: blur(10px);
+                        // opacity: 0;
+                        // filter: blur(10px);
                         will-change: opacity, filter;
                      }
                   }
@@ -161,7 +153,7 @@
 
             &:first-child {
                .single-card__layer {
-                  &:nth-child(2) {
+                  &:nth-child(1) {
                      max-width: 500px;
 
                      .ligth-effect__wrapper {
@@ -173,7 +165,7 @@
 
             &:last-child {
                .single-card__layer {
-                  &:nth-child(1) {
+                  &:nth-child(2) {
                      max-width: 500px;
 
                      .ligth-effect__wrapper {
@@ -197,28 +189,28 @@
    @media screen and (max-width: 768px) {
       padding: 96px 16px 0;
 
-      .what-we-offer-inner__wrapper {
+      .projects-inner__wrapper {
          .cards__wrapper {
             .cards-row__wrapper {
                flex-direction: column;
 
                .single-card__layer {
                   max-width: 100% !important;
-                  border-radius: 12px;
-
-                  .ligth-effect__wrapper {
-                     right: -850px !important;
-                  }
 
                   .single-card__item {
                      border-radius: 12px;
 
                      .card-image__wrapper {
                         height: 220px;
+                        border-radius: 12px;
+
+                        .ligth-effect__wrapper {
+                           right: -850px !important;
+                        }
                      }
 
                      .card-content__wrapper {
-                        padding: 16px;
+                        padding: 16px 0;
 
                         h5 {
                            font-size: 18px;
