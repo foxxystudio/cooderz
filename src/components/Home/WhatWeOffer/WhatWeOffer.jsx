@@ -168,7 +168,17 @@ export default function WhatWeOffer() {
       });
 
       return () => ctx.revert();
-   }, { scope: whatWeOfferWrapper })
+   }, { scope: whatWeOfferWrapper });
+
+   const handleMouseMove = e => {
+      const card = e.currentTarget; // <-- her zaman single-card__layer
+      const rect = card.getBoundingClientRect();
+      const x = e.clientX - rect.left;
+      const y = e.clientY - rect.top;
+
+      card.style.setProperty('--mouse-x', `${x}px`);
+      card.style.setProperty('--mouse-y', `${y}px`);
+   };
 
    return (
       <div ref={whatWeOfferWrapper} className='home-what-we-offer__wrapper'>
@@ -182,7 +192,7 @@ export default function WhatWeOffer() {
                <div className="cards-row__wrapper">
                   {
                      cards1.map((item, i) => (
-                        <div className="single-card__layer" key={i}>
+                        <div onMouseMove={handleMouseMove} className="single-card__layer" key={i}>
                            <div className="ligth-effect__wrapper">
                               <Image
                                  src={'/images/what-we-offer/light-effect.svg'}
@@ -218,7 +228,7 @@ export default function WhatWeOffer() {
                <div className="cards-row__wrapper">
                   {
                      cards2.map((item, i) => (
-                        <div className="single-card__layer" key={i}>
+                        <div onMouseMove={handleMouseMove} className="single-card__layer" key={i}>
                            <div className="ligth-effect__wrapper">
                               <Image
                                  src={'/images/what-we-offer/light-effect.svg'}

@@ -60,6 +60,27 @@
                position: relative;
                opacity: 0;
                will-change: opacity;
+               --mouse-x: 50%;
+               --mouse-y: 50%;
+
+               &:hover::before,
+               &:focus-within::before {
+                  opacity: 0.6;
+               }
+
+               &::before {
+                  content: '';
+                  position: absolute;
+                  top: 0;
+                  left: 0;
+                  right: 0;
+                  bottom: 0;
+                  background: radial-gradient(circle at var(--mouse-x) var(--mouse-y), #EDEDED, transparent 60%);
+                  opacity: 0;
+                  transition: opacity .5s ease-in;
+                  pointer-events: none;
+                  z-index: 2;
+               }
 
                .ligth-effect__wrapper {
                   position: absolute;
@@ -70,11 +91,16 @@
                   opacity: .6;
                   pointer-events: none;
                   z-index: 2;
+                  transition: all 500ms ease-in;
 
                   img {
                      width: 100%;
                      height: 100%;
                   }
+               }
+
+               &:hover .ligth-effect__wrapper {
+                  opacity: 0;
                }
 
                .single-card__item {
