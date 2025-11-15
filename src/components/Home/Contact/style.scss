@@ -32,12 +32,18 @@
                background-clip: text;
                -webkit-background-clip: text;
                -webkit-text-fill-color: transparent;
+               opacity: 0;
+               filter: blur(10px);
+               will-change: opacity, filter;
             }
 
             span {
                font-size: 16px;
                line-height: 24px;
                color: rgba(255, 255, 255, 0.80);
+               opacity: 0;
+               filter: blur(10px);
+               will-change: opacity, filter;
             }
          }
 
@@ -58,6 +64,8 @@
                cursor: pointer;
                position: relative;
                overflow: hidden;
+               opacity: 0;
+               will-change: opacity;
 
                .gradient__item {
                   position: absolute;
@@ -81,11 +89,7 @@
                         opacity: 1;
                      }
                   }
-               }
-
-               // &:hover {
-               //    background: linear-gradient(121deg, #0F1417 -23.57%, #3E3CFF 33.26%, #74FFF0 101.94%);
-               // }
+               };
             }
          }
       }
@@ -96,6 +100,8 @@
          padding: 40px;
          border-radius: 30px;
          background: linear-gradient(180deg, rgba(255, 255, 255, 0.04) 0%, rgba(255, 255, 255, 0.00) 100%);
+         opacity: 0;
+         will-change: opacity;
 
          .form-inner__wrapper {
             width: 100%;

@@ -20,6 +20,8 @@
          display: flex;
          flex-direction: column;
          gap: 32px;
+         opacity: 0;
+         will-change: opacity;
 
          .header__wrapper {
             width: 100%;
@@ -110,7 +112,8 @@
                line-height: 24px;
                display: inline-block;
 
-               p, .code-anim-block {
+               p,
+               .code-anim-block {
                   display: inline;
                }
 
@@ -132,9 +135,11 @@
                   0% {
                      opacity: 0;
                   }
+
                   50% {
                      opacity: 1;
                   }
+
                   100% {
                      opacity: 0;
                   }

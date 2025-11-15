@@ -33,6 +33,14 @@ export default function Navbar() {
       const ctx = gsap.context(() => {
          const navbar = navbarRef.current;
 
+         const anim1 = gsap.to(navbar, {
+            // top: 0,
+            opacity: 1,
+            duration: .75,
+            delay: .75,
+            ease: 'power1.in',
+         });
+
          let isDark = false;
 
          const handleScroll = () => {

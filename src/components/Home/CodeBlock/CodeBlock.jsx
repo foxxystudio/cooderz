@@ -14,7 +14,19 @@ export default function CodeBlock() {
    useGSAP(() => {
       const ctx = gsap.context(() => {
          const block = codeBlock.current;
+         const codeBlockWrapper = block.querySelector('.code-block__wrapper');
          if (!block) return;
+
+         const anim1 = gsap.to(codeBlockWrapper, {
+            opacity: 1,
+            duration: .5,
+            ease: 'power1.in',
+            scrollTrigger: {
+               trigger: codeBlockWrapper,
+               start: 'top bottom-=25%',
+               once: true,
+            },
+         });
 
          const texts = gsap.utils.toArray('.code-anim-block', block);
          if (!texts.length) return;
@@ -36,6 +48,14 @@ export default function CodeBlock() {
                }
             );
          });
+
+         return () => {
+            [
+               anim1
+            ].forEach(a => {
+               a.kill();
+            })
+         }
       });
 
       return () => ctx.revert();

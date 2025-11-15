@@ -133,7 +133,10 @@ export default function Testimonials() {
 
    useGSAP(() => {
       const ctx = gsap.context(() => {
+         const testimonials = testimonialsRef.current;
          const singleTestimonialItem1 = gsap.utils.toArray('.home-testimonials__wrapper .logos__wrapper .single-logo__item');
+         const titleSpan = testimonials.querySelector('.title__wrapper span');
+         const titleH2 = testimonials.querySelector('.title__wrapper h2');
 
          const tl1 = horizontalLoop(singleTestimonialItem1, {
             speed: .5,
@@ -142,9 +145,52 @@ export default function Testimonials() {
             paddingRight: 72
          });
 
+         const anim1 = gsap.to(titleSpan, {
+            opacity: 1,
+            duration: .5,
+            delay: 1,
+            ease: 'power1.in',
+            onComplete: () => {
+               gsap.to(titleSpan, {
+                  filter: 'blur(0px)',
+                  ease: 'power1.in',
+                  duration: .5
+               });
+            }
+         });
+
+         const anim2 = gsap.to(titleH2, {
+            opacity: 1,
+            duration: .5,
+            delay: 1.25,
+            ease: 'power1.in',
+            onComplete: () => {
+               gsap.to(titleH2, {
+                  filter: 'blur(0px)',
+                  ease: 'power1.in',
+                  duration: .5
+               });
+            }
+         });
+
+         const anim3 = gsap.to(singleTestimonialItem1, {
+            opacity: 1,
+            duration: .5,
+            delay: 1.5,
+            ease: 'power2.inOut',
+            stagger: 0.05
+         })
+
          // Cleanup bu scope'un içinde otomatik yapılır
          return () => {
             tl1?.kill();
+            [
+               anim1,
+               anim2,
+               anim3
+            ].forEach(a => {
+               a.kill();
+            })
             ScrollTrigger.getAll().forEach(trigger => trigger.kill());
          };
       });

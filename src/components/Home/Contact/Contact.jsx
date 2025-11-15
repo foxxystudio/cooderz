@@ -1,11 +1,105 @@
 'use client';
-import React from 'react';
+import React, { useRef } from 'react';
 import './style.scss';
 import DoubleLayerButtonHoverAnim from '@/components/DoubleLayerButtonHoveAnim';
+import { useGSAP } from '@gsap/react';
+import gsap from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
+
+gsap.registerPlugin(ScrollTrigger);
 
 export default function Contact() {
+   const contactRef = useRef(null);
+
+   useGSAP(() => {
+      const ctx = gsap.context(() => {
+         const contact = contactRef.current;
+         const form = contact.querySelector('.form__wrapper');
+         const titleH2 = contact.querySelector('.text__wrapper h2');
+         const titleSpan = contact.querySelector('.text__wrapper span');
+         const socials = gsap.utils.toArray('.single-social__item', contact);
+
+         const anim1 = gsap.to(titleH2, {
+            opacity: 1,
+            duration: .5,
+            ease: 'power1.in',
+            scrollTrigger: {
+               trigger: titleH2,
+               start: 'top bottom',
+               once: true,
+            },
+            onComplete: () => {
+               gsap.to(titleH2, {
+                  filter: 'blur(0px)',
+                  ease: 'power1.in',
+                  duration: .5
+               });
+            }
+         });
+
+         const anim2 = gsap.to(titleSpan, {
+            opacity: 1,
+            duration: .5,
+            ease: 'power1.in',
+            delay: .25,
+            scrollTrigger: {
+               trigger: titleSpan,
+               start: 'top bottom',
+               once: true,
+            },
+            onComplete: () => {
+               gsap.to(titleSpan, {
+                  filter: 'blur(0px)',
+                  ease: 'power1.in',
+                  duration: .5
+               });
+            }
+         });
+
+         const anim3 = gsap.to(socials, {
+            opacity: 1,
+            duration: .5,
+            ease: 'power1.in',
+            delay: .25,
+            scrollTrigger: {
+               trigger: socials,
+               start: 'top bottom',
+               once: true,
+            },
+            stagger: .25
+         });
+
+         const anim4 = gsap.to(form, {
+            opacity: 1,
+            duration: .5,
+            ease: 'power1.in',
+            scrollTrigger: {
+               trigger: form,
+               start: 'top bottom-=25%',
+               once: true,
+               markers: true
+            },
+         });
+
+         return () => {
+            [
+               anim1,
+               anim2,
+               anim3,
+               anim4
+            ].forEach(a => {
+               a.kill();
+            })
+         }
+      });
+
+      return () => {
+         ctx.revert();
+      }
+   }, { scope: contactRef })
+
    return (
-      <div className='home-contact__wrapper'>
+      <div ref={contactRef} className='home-contact__wrapper'>
          <div className="contact-inner__wrapper">
             <div className="content__wrapper">
                <div className="text__wrapper">

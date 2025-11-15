@@ -7,7 +7,8 @@
    z-index: 9;
    padding: 0 96px;
    background: rgba(0, 0, 0, 0);
-   will-change: background-color;
+   opacity: 0;
+   will-change: background-color, opacity;
 
    .navbar-divider {
       position: absolute;

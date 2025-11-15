@@ -41,12 +41,18 @@
             font-size: 16px;
             line-height: 24px;
             color: rgba(255, 255, 255, 0.80);
+            opacity: 0;
+            filter: blur(10px);
+            will-change: opacity, transform;
          }
 
          h2 {
             font-size: 20px;
             line-height: 26px;
             text-align: center;
+            opacity: 0;
+            filter: blur(10px);
+            will-change: opacity, transform;
          }
       }
 
@@ -62,6 +68,8 @@
             height: 64px;
             border-radius: 8px;
             overflow: hidden;
+            opacity: 0;
+            will-change: opacity;
 
             img {
                width: 100%;

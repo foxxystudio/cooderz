@@ -48,28 +48,123 @@ export default function WhatWeOffer() {
    useGSAP(() => {
       const ctx = gsap.context(() => {
          const mainWrapper = whatWeOfferWrapper.current;
+         const titleSpan = mainWrapper.querySelector('.title__wrapper span');
+         const titleH2 = mainWrapper.querySelector('.title__wrapper h2');
          if (!mainWrapper) return;
 
-         const cards = gsap.utils.toArray('.single-card__layer', mainWrapper);
+         const anim1 = gsap.to(titleSpan, {
+            opacity: 1,
+            duration: .5,
+            ease: 'power1.in',
+            scrollTrigger: {
+               trigger: titleSpan,
+               start: 'top bottom',
+               once: true,
+            },
+            onComplete: () => {
+               gsap.to(titleSpan, {
+                  filter: 'blur(0px)',
+                  ease: 'power1.in',
+                  duration: .5
+               });
+            }
+         });
+
+         const anim2 = gsap.to(titleH2, {
+            opacity: 1,
+            duration: .5,
+            ease: 'power1.in',
+            delay: .25,
+            scrollTrigger: {
+               trigger: titleH2,
+               start: 'top bottom',
+               once: true,
+            },
+            onComplete: () => {
+               gsap.to(titleH2, {
+                  filter: 'blur(0px)',
+                  ease: 'power1.in',
+                  duration: .5
+               });
+            }
+         });
+
+         const cards = mainWrapper.querySelectorAll('.cards__wrapper .single-card__layer');
          if (!cards.length) return;
 
-         // cards.forEach((card, i) => {
-         //    gsap.fromTo(
-         //       card,
-         //       { opacity: 0 },
-         //       {
-         //          opacity: 1,
-         //          duration: .5,
-         //          ease: 'power2.in',
-         //          delay: i * 0.05, // küçük bir gecikme ile doğal geçiş
-         //          scrollTrigger: {
-         //             trigger: card,
-         //             start: 'top bottom-=10%',
-         //             once: true,
-         //          },
-         //       }
-         //    );
-         // });
+         cards.forEach((card, i) => {
+            console.log(card);
+            const cardTitle = card.querySelectorAll('.card-content__wrapper h5');
+            const cardDesc = card.querySelectorAll('.card-content__wrapper span');
+
+            const anim3 = gsap.to(card, {
+               opacity: 1,
+               duration: .5,
+               ease: 'power1.in',
+               scrollTrigger: {
+                  trigger: card,
+                  start: 'top bottom-=25%',
+                  once: true,
+               },
+               stagger: 0.05
+            });
+
+            const anim4 = gsap.to(cardTitle, {
+               opacity: 1,
+               duration: .5,
+               ease: 'power1.in',
+               scrollTrigger: {
+                  trigger: cardTitle,
+                  start: 'top bottom',
+                  once: true,
+               },
+               onComplete: () => {
+                  gsap.to(cardTitle, {
+                     filter: 'blur(0px)',
+                     ease: 'power1.in',
+                     duration: .5
+                  });
+               }
+            });
+
+            const anim5 = gsap.to(cardDesc, {
+               opacity: 1,
+               duration: .5,
+               ease: 'power1.in',
+               delay: .25,
+               scrollTrigger: {
+                  trigger: cardDesc,
+                  start: 'top bottom',
+                  once: true,
+               },
+               onComplete: () => {
+                  gsap.to(cardDesc, {
+                     filter: 'blur(0px)',
+                     ease: 'power1.in',
+                     duration: .5
+                  });
+               }
+            });
+
+            return () => {
+               [
+                  anim3,
+                  anim4,
+                  anim5
+               ].forEach(a => {
+                  a.kill();
+               })
+            }
+         });
+
+         return () => {
+            [
+               anim1,
+               anim2
+            ].forEach(a => {
+               a.kill();
+            })
+         }
       });
 
       return () => ctx.revert();
