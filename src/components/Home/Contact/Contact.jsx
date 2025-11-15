@@ -77,7 +77,6 @@ export default function Contact() {
                trigger: form,
                start: 'top bottom-=25%',
                once: true,
-               markers: true
             },
          });
 
