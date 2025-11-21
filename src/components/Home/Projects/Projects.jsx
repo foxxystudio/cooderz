@@ -188,7 +188,7 @@ export default function Projects() {
             </div>
 
             <div className="cards__wrapper">
-               <div className="single-card__item">
+               <div className="single-card__item" onMouseMove={handleMouseMove}>
                   <div className="card-image__wrapper">
                      <Image
                         src={'/images/case-studies/1.png'}
@@ -205,7 +205,7 @@ export default function Projects() {
                   </div>
                </div>
 
-               <div className="single-card__item">
+               <div className="single-card__item" onMouseMove={handleMouseMove}>
                   <div className="card-image__wrapper">
                      <Image
                         src={'/images/case-studies/2.png'}
@@ -222,7 +222,7 @@ export default function Projects() {
                   </div>
                </div>
 
-               <div className="single-card__item">
+               <div className="single-card__item" onMouseMove={handleMouseMove}>
                   <div className="card-image__wrapper">
                      <Image
                         src={'/images/case-studies/3.png'}

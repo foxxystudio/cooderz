@@ -24,6 +24,9 @@ export default function LenisProvider({ children }) {
          duration: 1.2, // Süreyi kısalttık
          smooth: true,
          easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+         prevent: (node) => {
+            return !!node?.closest?.('.disable-smooth-scroll');
+         }
          // lerp: 0.1, // Daha smooth scroll için
       });
 

@@ -152,7 +152,7 @@ export default function Hero() {
                   color={'font-white'}
                   bg={'bg-blue-outline'}
                   bgHover={'bg-hover-primary'}
-                  href={'https://calendly.com/yunismikayilov/intro-call'}
+                  href={'https://google.com/'}
                   target={'_blank'}
                   icon={'arrow-right-up'}
                />
