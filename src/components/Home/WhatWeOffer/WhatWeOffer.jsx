@@ -15,7 +15,24 @@ const cards1 = [
       img: '/images/what-we-offer/1.png',
       width: 1456,
       height: 640,
-      target: '.single-service__block-1'
+      target: '.single-service__block-1',
+      modalData: `
+         <p class="normal-text">Secure, scalable, and audit-ready smart contract builds.</p></br /><br />
+         <p class="normal-text">From standard tokens to custom mechanics, we write and deploy contracts that just work.</p></br /><br />
+         <p class="normal-text">From idea to on-chain logic built clean, secure, and optimized.</p></br /><br />
+         <p class="normal-text">We build smart contracts that form the backbone of your Web3 project. Whether you’re launching a token, NFT collection, or a complex protocol, we write contracts aligned with your roadmap.</p></br /><br />
+         <p class="normal-text">What we build:</p><br />
+         <p class="icon">✅</p> <p class="normal-text">ERC-20, ERC-721, ERC-1155, SPL, and more</p><br />
+         <p class="icon">✅</p> <p class="normal-text">Minting contracts with access control and metadata logic</p><br />
+         <p class="icon">✅</p> <p class="normal-text">Bonding curve or liquidity-backed supply contracts</p><br />
+         <p class="icon">✅</p> <p class="normal-text">Proxy and upgradeable contracts with modular architecture</p><br />
+         <p class="icon">✅</p> <p class="normal-text">Tokenomics logic for vesting, burning, rebasing, or rewards</p><br /><br />
+         <p class="normal-text">What you get:</p><br />
+         <p class="normal-text">Verified source code on Etherscan or explorer</p><br />
+         <p class="normal-text">Audit-friendly code with full test coverage</p><br />
+         <p class="normal-text">Deployment scripts and transfer of ownership/keys</p><br /><br />
+         <p class="normal-text">Whether you're launching a simple meme coin or a fully-fledged protocol, we build the contracts that make it possible.</p><br /><br />
+      `
    },
    {
       title: 'Token Launch Infrastructure',
@@ -23,7 +40,24 @@ const cards1 = [
       img: '/images/what-we-offer/2.png',
       width: 1000,
       height: 640,
-      target: '.single-service__block-1'
+      target: '.single-service__block-1',
+      modalData: `
+         <p class="normal-text">Launch faster with fully-automated, contract-powered token flows.</p></br /><br />
+         <p class="normal-text">From bonding curves to affiliate systems we help you deploy and scale token ecosystems.</p></br /><br />
+         <p class="normal-text">Launch your token the right way with smart contract automation and scalable architecture.</p></br /><br />
+         <p class="normal-text">We design and deploy the full technical stack for token launches, so you don’t just go live, you go live with momentum, safety, and built-in features that drive liquidity and growth.We design and deploy the full technical stack for token launches, so you don’t just go live, you go live with momentum, safety, and built-in features that drive liquidity and growth.</p></br /><br />
+         <p class="normal-text">What’s included:</p><br />
+         <p class="icon">✅</p> <p class="normal-text">Launchpads and factory contracts</p><br />
+         <p class="icon">✅</p> <p class="normal-text">Bonding curve systems with progressive liquidity</p><br />
+         <p class="icon">✅</p> <p class="normal-text">Uniswap/Raydium/DEX listing and migration</p><br />
+         <p class="icon">✅</p> <p class="normal-text">Investor and affiliate/referral structures</p><br />
+         <p class="icon">✅</p> <p class="normal-text">Liquidity locks, treasury splitting, multi-sig setup</p><br /><br />
+         <p class="normal-text">Plus:</p><br />
+         <p class="normal-text">Analytics and monitoring setup</p><br />
+         <p class="normal-text">Snapshot and token-gated systems on request</p><br />
+         <p class="normal-text">Optional launch consulting + rollout timing guidance</p><br /><br />
+         <p class="normal-text">You focus on the community and marketing we'll handle everything under the hood.</p><br /><br />
+      `
    },
 ];
 
@@ -34,7 +68,24 @@ const cards2 = [
       img: '/images/what-we-offer/3.png',
       width: 1000,
       height: 640,
-      target: '.single-service__block-2'
+      target: '.single-service__block-2',
+      modalData: `
+         <p class="normal-text">Keep your project growing long after launch with upgrades, automation, and real-time support.</p></br /><br />
+         <p class="normal-text">From contract maintenance to new feature rollouts, we make sure your project stays secure, scalable, and relevant.</p></br /><br />
+         <p class="normal-text">Launching is just step one, this is where the real evolution begins.</p></br /><br />
+         <p class="normal-text">After your token or app goes live, it needs updates, improvements, monitoring, and new growth catalysts to stay competitive. We partner with you beyond launch to ensure your project continues to scale, stay secure, and stay relevant.</p></br /><br />
+         <p class="normal-text">What we offer:</p><br />
+         <p class="icon">✅</p> <p class="normal-text">Smart contract upgrades and patching</p><br />
+         <p class="icon">✅</p> <p class="normal-text">Feature expansions: staking, rewards, claim systems, etc.</p><br />
+         <p class="icon">✅</p> <p class="normal-text">Liquidity support: rebalancing, migrations, lock extensions</p><br />
+         <p class="icon">✅</p> <p class="normal-text">On-chain dashboards and growth analytics</p><br />
+         <p class="icon">✅</p> <p class="normal-text">Bug fixes, security improvements, and gas optimizations</p><br /><br />
+         <p class="normal-text">Plus:</p><br />
+         <p class="normal-text">Advisory on market fit, user retention, and web3 growth loops</p><br />
+         <p class="normal-text">Multi-sig or proxy-based upgrade systems</p><br />
+         <p class="normal-text">Incident response and emergency fix deployments</p><br /><br />
+         <p class="normal-text">Whether you're scaling up, branching out, or tightening security, we’ll keep your project running and evolving with the space.</p><br /><br />
+      `
    },
    {
       title: 'Protocol & DApp Development',
@@ -42,7 +93,23 @@ const cards2 = [
       img: '/images/what-we-offer/4.png',
       width: 1000,
       height: 640,
-      target: '.single-service__block-2'
+      target: '.single-service__block-2',
+      modalData: `
+         <p class="normal-text">End-to-end dApp and protocol builds for real users and real demand.</p></br /><br />
+         <p class="normal-text">We ship full-stack Web3 apps with on-chain logic, wallet integration, and scalable backends.</p></br /><br />
+         <p class="normal-text">Full-stack Web3 apps for users, not just wallets.</p></br /><br />
+         <p class="normal-text">From frontend to contracts to backend indexing, we build Web3 applications that feel seamless, fast, and ready for scale. Whether you need a staking dashboard, NFT marketplace, analytics portal, or DeFi tool — we bring it all together.</p></br /><br />
+         <p class="normal-text">What we build:</p><br />
+         <p class="icon">✅</p> <p class="normal-text">dApps (React, Next.js, Tailwind, Wagmi, etc.)</p><br />
+         <p class="icon">✅</p> <p class="normal-text">Wallet integrations (WalletConnect, Metamask, Phantom, etc.)</p><br />
+         <p class="icon">✅</p> <p class="normal-text">Backend indexing / API layers (Node.js, TheGraph, Go)</p><br />
+         <p class="icon">✅</p> <p class="normal-text">DAO tools, staking portals, custom on-chain UI elements</p><br />
+         <p class="icon">✅</p> <p class="normal-text">Off-chain data syncing, event logs, and notifications</p><br /><br />
+         <p class="normal-text">Stack options:</p><br />
+         <p class="normal-text">ETH, SOL, BSC, BASE, ARB, OP, AVAX and more</p><br />
+         <p class="normal-text">Foundry, Hardhat, Anchor, or custom stacks</p><br />
+         <p class="normal-text">If your protocol needs an interface we’ll build it fast, stable, and right.</p><br /><br />
+      `
    },
    {
       title: 'Custom Tools & Automations',
@@ -50,7 +117,24 @@ const cards2 = [
       img: '/images/what-we-offer/5.png',
       width: 1000,
       height: 640,
-      target: '.single-service__block-2'
+      target: '.single-service__block-2',
+      modalData: `
+         <p class="normal-text">Bots, dashboards, and scripts that make your blockchain workflow effortless.</p></br /><br />
+         <p class="normal-text">From MEV bots to airdrop systems, if it runs on-chain, it can be automated.</p></br /><br />
+         <p class="normal-text">Web3 workflows without the repetitive work.</p></br /><br />
+         <p class="normal-text">Save time, reduce risk, and scale your project using on-chain and off-chain automations. Whether it's mass token drops, wallet activity tracking, or automated rebalancing, we build tools that get things done while you sleep.</p></br /><br />
+         <p class="normal-text">What we build:</p><br />
+         <p class="icon">✅</p> <p class="normal-text">Sniper bots, MEV-aware trading tools</p><br />
+         <p class="icon">✅</p> <p class="normal-text">Treasury automations (vesting, burning, airdrops)</p><br />
+         <p class="icon">✅</p> <p class="normal-text">Telegram/Discord bot integrations for real-time alerts</p><br />
+         <p class="icon">✅</p> <p class="normal-text">Custom claim portals, NFT metadata pipelines</p><br />
+         <p class="icon">✅</p> <p class="normal-text">Off-chain cron jobs using Gelato or private infra</p><br /><br />
+         <p class="normal-text">Use Cases:</p><br />
+         <p class="normal-text">Airdrop thousands in seconds</p><br />
+         <p class="normal-text">Automate buybacks, burns, or reward cycles</p><br />
+         <p class="normal-text">Publish live token stats to socials automatically</p><br /><br />
+         <p class="normal-text">If it touches the blockchain, we can automate it.</p><br /><br />
+      `
    }
 ];
 
@@ -255,7 +339,14 @@ export default function WhatWeOffer() {
 
    useEffect(() => {
       const modal1 = document.querySelectorAll('.home-what-we-offer__wrapper .single-service__block')[0];
+      const modal1Title = modal1.querySelectorAll('h2');
+      const modal1Descs = gsap.utils.toArray('span .normal-text', modal1);
+      const modal1DescsIcon = gsap.utils.toArray('span .icon', modal1);
       const modal2 = document.querySelectorAll('.home-what-we-offer__wrapper .single-service__block')[1];
+      const modal2Title = modal2.querySelectorAll('h2');
+      const modal2Descs = gsap.utils.toArray('span .normal-text', modal2);
+      const modal2DescsIcon = gsap.utils.toArray('span .icon', modal2);
+
       console.log(modal1);
       if (!modal1 || !modal2) return;
 
@@ -264,8 +355,28 @@ export default function WhatWeOffer() {
             width: '100%',
             height: '100%',
             overflow: 'auto',
-            duration: .5,
+            duration: .75,
             ease: 'power1.out'
+         });
+         gsap.to(modal1Title, {
+            opacity: 1,
+            filter: 'blur(0px)',
+            duration: .5,
+            delay: .5,
+         });
+         gsap.to(modal1Descs, {
+            opacity: .5,
+            filter: 'blur(0px)',
+            duration: .5,
+            delay: .5,
+            stagger: 0.025
+         });
+         gsap.to(modal1DescsIcon, {
+            opacity: 1,
+            filter: 'blur(0px)',
+            duration: .5,
+            delay: .75,
+            stagger: 0.025
          });
       } else {
          gsap.to(modal1, {
@@ -275,6 +386,20 @@ export default function WhatWeOffer() {
             duration: .5,
             ease: 'power1.out'
          });
+         gsap.to(modal1Title, {
+            opacity: 0,
+            filter: 'blur(10px)',
+            duration: 0,
+         });
+         gsap.to(modal1Descs, {
+            opacity: 0,
+            filter: 'blur(10px)',
+         });
+         gsap.to(modal1DescsIcon, {
+            opacity: 0,
+            filter: 'blur(10px)',
+            duration: 0,
+         })
       }
 
       if (serviceModal2IsActive) {
@@ -282,8 +407,28 @@ export default function WhatWeOffer() {
             width: '100%',
             height: '100%',
             overflow: 'auto',
-            duration: .5,
+            duration: .75,
             ease: 'power1.out'
+         });
+         gsap.to(modal2Title, {
+            opacity: 1,
+            filter: 'blur(0px)',
+            duration: .5,
+            delay: .5,
+         });
+         gsap.to(modal2Descs, {
+            opacity: .5,
+            filter: 'blur(0px)',
+            duration: .5,
+            delay: .5,
+            stagger: 0.025
+         });
+         gsap.to(modal2DescsIcon, {
+            opacity: 1,
+            filter: 'blur(0px)',
+            duration: .5,
+            delay: .75,
+            stagger: 0.025
          });
       } else {
          gsap.to(modal2, {
@@ -293,6 +438,20 @@ export default function WhatWeOffer() {
             duration: .5,
             ease: 'power1.out'
          });
+         gsap.to(modal2Title, {
+            opacity: 0,
+            filter: 'blur(10px)',
+            duration: 0,
+         });
+         gsap.to(modal2Descs, {
+            opacity: 0,
+            filter: 'blur(10px)',
+         });
+         gsap.to(modal2DescsIcon, {
+            opacity: 0,
+            filter: 'blur(10px)',
+            duration: 0,
+         })
       }
    }, [serviceModal1IsActive, serviceModal2IsActive]);
 
@@ -331,29 +490,7 @@ export default function WhatWeOffer() {
                         </div>
                         <div className="content__wrapper disable-smooth-scroll" data-lenis-prevent>
                            <h2 className='font-primary-600 font-white'>{serviceModal1Data?.title}</h2>
-                           <p className='font-primary-400'>
-                              Need something specific for your token? We build bots, scripts, and dapps that automate and simplify your workflow.<br /> <br />
-
-                              From idea to on-chain logic built clean, secure, and optimized.<br /><br />
-
-                              We build smart contracts that form the backbone of your Web3 project. Whether you’re launching a token, NFT collection, or a complex protocol, we write contracts aligned with your roadmap. <br /><br />
-
-                              What we build:<br /><br />
-
-                              ✅ ERC-20, ERC-721, ERC-1155, SPL, and more<br />
-                              ✅ Minting contracts with access control and metadata logic<br />
-                              ✅ Bonding curve or liquidity-backed supply contracts<br />
-                              ✅ Proxy and upgradeable contracts with modular architecture<br />
-                              ✅ Tokenomics logic for vesting, burning, rebasing, or rewards<br /><br />
-
-                              What you get:<br /><br />
-
-                              Verified source code on Etherscan or explorer<br />
-                              Audit-friendly code with full test coverage<br />
-                              Deployment scripts and transfer of ownership/keys<br /><br />
-
-                              Whether you're launching a simple meme coin or a fully-fledged protocol, we build the contracts that make it possible.
-                           </p>
+                           <span className='font-primary-400' dangerouslySetInnerHTML={{ __html: serviceModal1Data?.modalData }}></span>
                         </div>
                      </div>
 
@@ -404,28 +541,7 @@ export default function WhatWeOffer() {
                         </div>
                         <div className="content__wrapper disable-smooth-scroll" data-lenis-prevent>
                            <h2 className='font-primary-600 font-white'>{serviceModal2Data?.title}</h2>
-                           <p className='font-primary-400'>
-                              Need something specific for your token? We build bots, scripts, and dapps that automate and simplify your workflow.<br /> <br />
-
-                              From idea to on-chain logic built clean, secure, and optimized.<br /><br />
-
-                              We build smart contracts that form the backbone of your Web3 project. Whether you’re launching a token, NFT collection, or a complex protocol, we write contracts aligned with your roadmap. <br /><br />
-
-                              What we build:<br /><br />
-                              ✅ ERC-20, ERC-721, ERC-1155, SPL, and more<br />
-                              ✅ Minting contracts with access control and metadata logic<br />
-                              ✅ Bonding curve or liquidity-backed supply contracts<br />
-                              ✅ Proxy and upgradeable contracts with modular architecture<br />
-                              ✅ Tokenomics logic for vesting, burning, rebasing, or rewards<br /><br />
-
-                              What you get:<br /><br />
-
-                              Verified source code on Etherscan or explorer<br />
-                              Audit-friendly code with full test coverage<br />
-                              Deployment scripts and transfer of ownership/keys<br /><br />
-
-                              Whether you're launching a simple meme coin or a fully-fledged protocol, we build the contracts that make it possible.
-                           </p>
+                           <span className='font-primary-400' dangerouslySetInnerHTML={{ __html: serviceModal2Data?.modalData }}></span>
                         </div>
                      </div>
                      {
