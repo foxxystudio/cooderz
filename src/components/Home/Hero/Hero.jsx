@@ -142,12 +142,12 @@ export default function Hero() {
          <div className="hero-inner__wrapper">
             <div className="content__wrapper">
                <div className="text__wrapper">
-                  <h1 className='font-secondary-600 font-white'>Launch better.</h1>
-                  <span className='font-primary-400'>You focus on the vision. We’ll handle the rest.</span>
+                  <h1 className='font-secondary-600 font-white'>We turn whiteboard ideas into on-chain reality, minus the tech headaches.</h1>
+                  <span className='font-primary-400'>Apps, smart contracts, dashboards -  all built like we’re the ones using them.</span>
                </div>
 
                <DoubleLayerButtonHoverAnim
-                  text={'Launch with us'}
+                  text={'Start your project'}
                   font={'font-primary-500'}
                   color={'font-white'}
                   bg={'bg-blue-outline'}

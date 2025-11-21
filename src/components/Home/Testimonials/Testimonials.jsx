@@ -196,7 +196,7 @@ export default function Testimonials() {
       });
 
       return () => ctx.revert();
-   }, { scope: testimonialsRef })
+   }, { scope: testimonialsRef });
 
    return (
       <div ref={testimonialsRef} className='home-testimonials__wrapper'>

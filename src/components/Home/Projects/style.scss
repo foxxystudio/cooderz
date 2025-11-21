@@ -22,8 +22,8 @@
             font-size: 16px;
             line-height: 24px;
             color: rgba(255, 255, 255, 0.80);
-            // opacity: 0;
-            // filter: blur(10px);
+            opacity: 0;
+            filter: blur(10px);
             will-change: opacity;
          }
 
@@ -34,8 +34,8 @@
             background-clip: text;
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
-            // opacity: 0;
-            // filter: blur(10px);
+            opacity: 0;
+            filter: blur(10px);
             will-change: opacity, filter;
          }
       }
@@ -43,136 +43,108 @@
       .cards__wrapper {
          width: 100%;
          display: flex;
-         flex-direction: column;
          gap: 20px;
 
-         .cards-row__wrapper {
+         .single-card__item {
             width: 100%;
             display: flex;
-            gap: 20px;
+            min-height: 500px;
+            height: 500px;
+            flex-direction: column;
+            align-items: center;
+            justify-content: space-between;
+            flex: 1 0 0;
+            padding: 44px;
+            border-radius: 32px;
+            position: relative;
+            overflow: hidden;
+            opacity: 0;
+            will-change: opacity;
 
-            .single-card__layer {
+            .card-image__wrapper {
+               width: 295px;
+               height: 295px;
+               border-radius: 50%;
+               display: flex;
+               align-items: center;
+               justify-content: center;
+            }
+
+            .card-content__wrapper {
                width: 100%;
-               padding: 1px;
-               overflow: hidden;
-               position: relative;
-               background: transparent;
-               // opacity: 0;
-               will-change: opacity;
+               display: flex;
+               flex-direction: column;
+               align-items: center;
+               gap: 12px;
 
-               &:hover .ligth-effect__wrapper {
+               h5 {
+                  font-size: 28px;
+                  line-height: 36px;
                   opacity: 0;
+                  filter: blur(10px);
+                  will-change: opacity, filter;
                }
 
-               .single-card__item {
-                  width: 100%;
-                  height: 100%;
-                  border-radius: 20px;
-                  background: var(--bg-color);
-
-                  .card-image__wrapper {
-                     width: 100%;
-                     height: 320px;
-                     overflow: hidden;
-                     border-radius: 20px;
-                     position: relative;
-                     --mouse-x: 50%;
-                     --mouse-y: 50%;
-
-                     &:hover::before,
-                     &:focus-within::before {
-                        opacity: 0.6;
-                     }
-
-                     &::before {
-                        content: '';
-                        position: absolute;
-                        top: 0;
-                        left: 0;
-                        right: 0;
-                        bottom: 0;
-                        background: radial-gradient(circle at var(--mouse-x) var(--mouse-y), #EDEDED, transparent 60%);
-                        opacity: 0;
-                        transition: opacity .5s ease-in;
-                        pointer-events: none;
-                        z-index: 2;
-                     }
-
-                     .ligth-effect__wrapper {
-                        position: absolute;
-                        top: -700px;
-                        right: -702px;
-                        width: 1930px;
-                        height: 1425px;
-                        opacity: .6;
-                        pointer-events: none;
-                        z-index: 2;
-                        transition: all 500ms ease-in;
-
-                        img {
-                           width: 100%;
-                           height: 100%;
-                        }
-                     }
-
-                     img {
-                        width: 100%;
-                        height: 100%;
-                        object-fit: cover;
-                        transition: all .6s ease-in-out;
-                     }
-                  }
-
-                  .card-content__wrapper {
-                     width: 100%;
-                     display: flex;
-                     flex-direction: column;
-                     gap: 12px;
-                     padding: 24px 0;
-
-                     h5 {
-                        font-size: 20px;
-                        line-height: 28px;
-                        // opacity: 0;
-                        // filter: blur(10px);
-                        will-change: opacity, filter;
-                     }
-                  }
-
-                  @media screen and (min-width: 1024px) {
-                     &:hover {
-                        .card-image__wrapper {
-                           img {
-                              transform: scale(1.05);
-                           }
-                        }
-                     }
-                  }
+               span {
+                  font-size: 16px;
+                  line-height: 24px;
+                  color: var(--white);
+                  text-align: center;
+                  opacity: 0;
+                  filter: blur(10px);
+                  will-change: opacity, filter;
                }
             }
 
-            &:first-child {
-               .single-card__layer {
-                  &:nth-child(1) {
-                     max-width: 500px;
+            // 1 ve 3. kart normal
+            &:nth-child(1),
+            &:nth-child(3) {
+               border: 2px solid #343434;
+               background: #010715;
+               box-shadow:
+                  -30px -30px 100px rgba(255, 255, 255, 0.15) inset,
+                  30px 30px 100px rgba(255, 255, 255, 0.10) inset;
 
-                     .ligth-effect__wrapper {
-                        right: -930px;
-                     }
-                  }
+               .card-image__wrapper {
+                  background: rgba(255, 255, 255, 0.01);
+                  box-shadow: 16px 16px 100px rgba(52, 52, 52, 0.60) inset;
                }
             }
 
-            &:last-child {
-               .single-card__layer {
-                  &:nth-child(2) {
-                     max-width: 500px;
+            // ★★★ Orta kart — gradient border (çalışan versiyon)
+            &:nth-child(2) {
+               background: #010715;
+               box-shadow:
+                  -30px -30px 100px rgba(63, 194, 172, 0.20) inset,
+                  30px 30px 100px rgba(161, 90, 225, 0.20) inset;
 
-                     .ligth-effect__wrapper {
-                        right: -930px;
-                     }
-                  }
+               .card-image__wrapper {
+                  background: rgba(255, 255, 255, 0.01);
+                  box-shadow: 16px 16px 100px rgba(161, 90, 225, 0.30) inset;
                }
+
+               // ★ Gradient border (tam uyumlu)
+               &::before {
+                  content: "";
+                  position: absolute;
+                  inset: 0;
+                  padding: 2px; // border kalınlığı
+                  border-radius: inherit;
+
+                  background: linear-gradient(0deg, #3FC2AC, #A15AE1);
+
+                  -webkit-mask:
+                     linear-gradient(#fff 0 0) content-box,
+                     linear-gradient(#fff 0 0);
+                  -webkit-mask-composite: xor;
+                  mask-composite: exclude;
+
+                  pointer-events: none;
+                  z-index: 1;
+               }
+
+               position: relative;
+               z-index: 1;
             }
          }
       }
@@ -184,6 +156,12 @@
 
    @media screen and (max-width: 990px) {
       padding: 172px 48px 0;
+
+      .projects-inner__wrapper {
+         .cards__wrapper {
+            flex-direction: column;
+         }
+      }
    }
 
    @media screen and (max-width: 768px) {
@@ -191,31 +169,18 @@
 
       .projects-inner__wrapper {
          .cards__wrapper {
-            .cards-row__wrapper {
-               flex-direction: column;
+            .single-card__item {
+               padding: 24px;
+               min-height: 365px;
+               height: 365px;
 
-               .single-card__layer {
-                  max-width: 100% !important;
+               .card-image__wrapper {
+                  width: 195px;
+                  height: 195px;
 
-                  .single-card__item {
-                     border-radius: 12px;
-
-                     .card-image__wrapper {
-                        height: 220px;
-                        border-radius: 12px;
-
-                        .ligth-effect__wrapper {
-                           right: -850px !important;
-                        }
-                     }
-
-                     .card-content__wrapper {
-                        padding: 16px 0;
-
-                        h5 {
-                           font-size: 18px;
-                        }
-                     }
+                  img {
+                     width: 100px;
+                     height: auto;
                   }
                }
             }

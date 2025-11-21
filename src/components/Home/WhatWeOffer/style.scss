@@ -88,7 +88,7 @@
                   right: -702px;
                   width: 1930px;
                   height: 1425px;
-                  opacity: .6;
+                  opacity: .4;
                   pointer-events: none;
                   z-index: 2;
                   transition: all 500ms ease-in;
@@ -108,9 +108,12 @@
                   height: 100%;
                   border-radius: 20px;
                   background: var(--bg-color);
+                  display: flex;
+                  flex-direction: column;
 
                   .card-image__wrapper {
                      width: 100%;
+                     min-height: 320px;
                      height: 320px;
                      overflow: hidden;
 
@@ -125,25 +128,46 @@
                   .card-content__wrapper {
                      padding: 32px;
                      width: 100%;
+                     height: 100%;
                      display: flex;
                      flex-direction: column;
+                     justify-content: space-between;
                      gap: 12px;
 
-                     h5 {
-                        font-size: 20px;
-                        line-height: 28px;
-                        opacity: 0;
-                        filter: blur(10px);
-                        will-change: opacity, filter;
+                     .text__wrapper {
+                        width: 100%;
+                        display: flex;
+                        flex-direction: column;
+                        gap: 12px;
+
+                        h5 {
+                           font-size: 20px;
+                           line-height: 28px;
+                           opacity: 0;
+                           filter: blur(10px);
+                           will-change: opacity, filter;
+                        }
+
+                        span {
+                           font-size: 14px;
+                           line-height: 24px;
+                           color: rgba(255, 255, 255, 0.50);
+                           opacity: 0;
+                           filter: blur(10px);
+                           will-change: opacity, filter;
+                        }
                      }
 
-                     span {
+                     .read-more {
                         font-size: 14px;
-                        line-height: 24px;
-                        color: rgba(255, 255, 255, 0.50);
-                        opacity: 0;
-                        filter: blur(10px);
-                        will-change: opacity, filter;
+                        line-height: 16px;
+                        text-decoration-line: underline;
+                        text-decoration-style: solid;
+                        text-decoration-skip-ink: auto;
+                        text-decoration-thickness: auto;
+                        text-underline-offset: auto;
+                        text-underline-position: from-font;
+                        cursor: pointer;
                      }
                   }
 
@@ -192,10 +216,6 @@
 
    @media screen and (max-width: 990px) {
       padding: 172px 48px 0;
-   }
-
-   @media screen and (max-width: 768px) {
-      padding: 96px 16px 0;
 
       .what-we-offer-inner__wrapper {
          .cards__wrapper {
@@ -204,6 +224,19 @@
 
                .single-card__layer {
                   max-width: 100% !important;
+               }
+            }
+         }
+      }
+   }
+
+   @media screen and (max-width: 768px) {
+      padding: 96px 16px 0;
+
+      .what-we-offer-inner__wrapper {
+         .cards__wrapper {
+            .cards-row__wrapper {
+               .single-card__layer {
                   border-radius: 12px;
 
                   .ligth-effect__wrapper {
@@ -214,6 +247,7 @@
                      border-radius: 12px;
 
                      .card-image__wrapper {
+                        min-height: 220px;
                         height: 220px;
                      }
 

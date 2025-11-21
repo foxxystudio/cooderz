@@ -4,7 +4,7 @@
    position: absolute;
    top: 0;
    left: 0;
-   padding: 0 0 0 0;
+   padding: 0 96px;
 
    .hero-bg__wrapper {
       position: absolute;
@@ -76,15 +76,13 @@
       margin: 0 auto;
       display: flex;
       align-items: center;
-      justify-content: space-between;
-      gap: 56px;
+      justify-content: flex-end;
       z-index: 2;
-      padding-left: 119px;
 
       .content__wrapper {
-         max-width: 385px;
-         min-width: 345px;
-         width: 385px;
+         max-width: 510px;
+         min-width: 510px;
+         width: 510px;
          display: flex;
          flex-direction: column;
          align-items: flex-start;
@@ -159,15 +157,37 @@
    }
 
    @media screen and (max-width: 1200px) {
+      padding: 0 64px;
+
       .hero-inner__wrapper {
-         padding: 0 16px 0 64px;
-         gap: 0;
+         .content__wrapper {
+            min-width: 347px;
+
+            .text__wrapper {
+               h1 {
+                  font-size: 40px;
+                  line-height: 44px;
+               }
+            }
+         }
       }
    }
 
    @media screen and (max-width: 990px) {
+      padding: 0 48px;
+
       .hero-inner__wrapper {
-         padding: 0 0 0 48px;
+         .content__wrapper {
+            min-width: auto;
+            width: 100%;
+
+            .text__wrapper {
+               h1 {
+                  font-size: 36px;
+                  line-height: 40px;
+               }
+            }
+         }
       }
    }
 
@@ -202,7 +222,7 @@
                   text-align: center;
                   font-size: 32px;
                   line-height: 36px;
-                  max-width: 300px;
+                  max-width: 100%;
                }
 
                span {

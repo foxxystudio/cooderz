@@ -1,0 +1,114 @@
+.service-modal-layer__wrapper {
+   position: fixed;
+   top: 0;
+   left: 0;
+   width: 100%;
+   height: 100vh;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   z-index: 9;
+   padding: 0 96px;
+   overflow: auto;
+   pointer-events: none;
+   opacity: 0;
+
+   .gradient__layer {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: var(--black);
+      z-index: 1;
+      opacity: .6;
+   }
+
+   .close__button {
+      width: 48px;
+      height: 48px;
+      position: fixed;
+      top: 48px;
+      right: 48px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      z-index: 9;
+
+      .line {
+         position: absolute;
+         width: 100%;
+         height: 3px;
+         background: var(--white);
+         border-radius: 4px;
+         transition: transform .5s cubic-bezier(0.87, 0, 0.13, 1), opacity .5s cubic-bezier(0.87, 0, 0.13, 1);
+         transform-origin: center;
+      }
+
+      .line-1 {
+         transform: rotate(45deg);
+      }
+
+      .line-2 {
+         transform: rotate(-45deg);
+      }
+   }
+
+   .service-modal__wrapper {
+      max-width: 1100px;
+      width: 100%;
+      display: flex;
+      padding: 32px;
+      border-radius: 24px;
+      background: #1A1C26;
+      position: relative;
+      z-index: 2;
+
+      .content__wrapper {
+         width: 100%;
+         display: flex;
+         flex-direction: column;
+         gap: 12px;
+
+         h2 {
+            font-size: 20px;
+            line-height: 28px;
+         }
+
+         p {
+            display: flex;
+            width: 100%;
+            font-size: 14px;
+            line-height: 24px;
+            color: rgba(255, 255, 255);
+            opacity: .5;
+         }
+      }
+   }
+
+   @media screen and (max-width: 1200px) {
+      padding: 0 64px;
+   }
+
+   @media screen and (max-width: 990px) {
+      padding: 0 48px;
+   }
+
+   @media screen and (max-width: 768px) {
+      padding: 0;
+      align-items: flex-start;
+
+      .service-modal__wrapper {
+         border-radius: 0;
+         padding: 72px 16px 48px;
+      }
+
+      .close__button {
+         top: 20px;
+         right: 20px;
+         width: 24px;
+         height: 24px;
+      }
+   }
+}
