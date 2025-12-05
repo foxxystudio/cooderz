@@ -1,5 +1,5 @@
 'use client';
-import React, { useRef } from 'react';
+import React, { useRef, useState } from 'react';
 import './style.scss';
 import DoubleLayerButtonHoverAnim from '@/components/DoubleLayerButtonHoveAnim';
 import { useGSAP } from '@gsap/react';
@@ -10,7 +10,16 @@ gsap.registerPlugin(ScrollTrigger);
 
 export default function Contact() {
    const contactRef = useRef(null);
+   const formRef = useRef(null);
+   const [contactData, setContactData] = useState({
+      name: '',
+      email: '',
+      message: ''
+   });
+   const [submitDisabled, setSubmitDisabled] = useState(true);
+   const [formSubmitSuccess, setFormSubmitSuccess] = useState(false);
 
+   /// GSAP ANIMATIONS ///
    useGSAP(() => {
       const ctx = gsap.context(() => {
          const contact = contactRef.current;
@@ -95,7 +104,70 @@ export default function Contact() {
       return () => {
          ctx.revert();
       }
-   }, { scope: contactRef })
+   }, { scope: contactRef });
+
+   /// Form Handle Change
+   const formHandleChange = (e) => {
+      const { name, value } = e.target;
+
+      console.log(contactData);
+
+      const updatedData = {
+         ...contactData,
+         [name]: value,
+      };
+
+      setContactData(updatedData);
+
+      // inputların doluluğunu kontrol et
+      const requiredFilled =
+         updatedData.name.trim() !== "" &&
+         updatedData.email.trim() !== "";
+         setSubmitDisabled(requiredFilled ? false : true);
+   }
+
+   /// Form Handle Submit
+   const formHandleSubmit = async (e) => {
+      e.preventDefault();
+      if (!formRef.current) return;
+
+      // native HTML validation kontrolü
+      if (!formRef.current.checkValidity()) {
+         formRef.current.reportValidity(); // kullanıcıya hata gösterir
+         return;
+      }
+
+      try {
+         setSubmitDisabled(true);
+         const response = await fetch("/api/send-mail", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify(contactData),
+         });
+
+         const result = await response.json();
+
+         if (result.success) {
+            formRef.current.reset();
+            setContactData({
+               name: '',
+               email: '',
+               message: '',
+            });
+            setSubmitDisabled(true);
+            setFormSubmitSuccess(true);
+         }
+      } catch (err) {
+         setSubmitDisabled(false);
+         console.error(err);
+      }
+   };
+
+   /// Reload Page Btn func After Success
+   const pageReloadAfterSuccess = (e) => {
+      e.preventDefault();
+      window.location.reload();
+   }
 
    return (
       <div ref={contactRef} className='home-contact__wrapper'>
@@ -109,66 +181,89 @@ export default function Contact() {
                <div className="social__wrapper">
                   <div className="single-social__item">
                      <div className="gradient__item"></div>
-                     <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
-                        <path d="M5.98088 -0.406412H2.8091L17.4088 20.477H20.5806L5.98088 -0.406412ZM0 -1.96094H6.9701L13.0134 6.83407L20.5796 -1.96094H22.6445L13.9303 8.16852L23.4074 21.9609H16.4373L10.0553 12.6729L2.06504 21.9609H0L9.13835 11.3384L0 -1.96094Z" fill="white" />
+                     <svg xmlns="http://www.w3.org/2000/svg" fill="#ffffff" viewBox="0 0 16 16" height="20" width="20">
+                        <path d="M12.6 0.75h2.454l-5.36 6.142L16 15.25h-4.937l-3.867 -5.07 -4.425 5.07H0.316l5.733 -6.57L0 0.75h5.063l3.495 4.633L12.601 0.75Zm-0.86 13.028h1.36L4.323 2.145H2.865z" strokeWidth="1"></path>
                      </svg>
                   </div>
 
                   <div className="single-social__item">
                      <div className="gradient__item"></div>
-                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="20" viewBox="0 0 24 20" fill="none">
-                        <g clipPath="url(#clip0_15320_330)">
-                           <path d="M6.12527 11.4228L8.71594 18.7129C8.71594 18.7129 9.03984 19.395 9.38667 19.395C9.7335 19.395 14.8921 13.939 14.8921 13.939L20.6286 2.67432L6.21771 9.54096L6.12527 11.4228Z" fill="#C8DAEA" />
-                           <path d="M9.56029 13.2925L9.06297 18.666C9.06297 18.666 8.8548 20.3125 10.4739 18.666C12.0931 17.0195 13.6429 15.7498 13.6429 15.7498" fill="#A9C6D8" />
-                           <path d="M6.17205 11.6828L0.842963 9.91757C0.842963 9.91757 0.206077 9.65487 0.411154 9.05917C0.453371 8.93633 0.538531 8.83181 0.793285 8.65217C1.97407 7.81542 22.6486 0.260571 22.6486 0.260571C22.6486 0.260571 23.2324 0.060586 23.5767 0.193601C23.6618 0.220405 23.7385 0.269729 23.7987 0.336527C23.859 0.403325 23.9007 0.485199 23.9197 0.573776C23.9569 0.730225 23.9724 0.891183 23.9659 1.052C23.9643 1.19112 23.9477 1.32007 23.9351 1.52227C23.8092 3.5878 20.041 19.0035 20.041 19.0035C20.041 19.0035 19.8156 19.9055 19.0078 19.9364C18.8093 19.943 18.6116 19.9088 18.4263 19.8359C18.2411 19.7631 18.0722 19.653 17.9297 19.5124C16.3446 18.1262 10.8659 14.3829 9.65527 13.5597C9.62796 13.5407 9.60496 13.5161 9.58783 13.4874C9.57069 13.4587 9.5598 13.4265 9.55592 13.3932C9.53899 13.3064 9.6318 13.1989 9.6318 13.1989C9.6318 13.1989 19.1716 4.57792 19.4255 3.6729C19.4451 3.60278 19.3709 3.56819 19.2711 3.5989C18.6375 3.83588 7.65363 10.8879 6.44137 11.6662C6.3541 11.693 6.26187 11.6987 6.17205 11.6828Z" fill="white" />
-                        </g>
-                        <defs>
-                           <clipPath id="clip0_15320_330">
-                              <rect width="24" height="20" fill="white" />
-                           </clipPath>
-                        </defs>
+                     <svg xmlns="http://www.w3.org/2000/svg" width="26" height="21" viewBox="0 0 27 22" fill="none">
+                        <path fillRule="evenodd" clipRule="evenodd" d="M1.79176 9.29865C8.78825 6.25039 13.4537 4.2408 15.788 3.26986C22.4531 0.497636 23.838 0.0160711 24.7407 0.000169546C24.9392 -0.00332783 25.3832 0.0458755 25.6707 0.279201C25.9135 0.476217 25.9803 0.742358 26.0123 0.92915C26.0443 1.11594 26.0841 1.54146 26.0524 1.87395C25.6912 5.66891 24.1284 14.8783 23.3333 19.1287C22.9969 20.9272 22.3345 21.5303 21.6932 21.5893C20.2994 21.7175 19.2411 20.6682 17.8912 19.7833C15.7789 18.3987 14.5856 17.5367 12.5352 16.1856C10.1657 14.6241 11.7017 13.7659 13.0521 12.3633C13.4055 11.9962 19.5463 6.4107 19.6652 5.90401C19.68 5.84064 19.6938 5.60442 19.5535 5.47969C19.4132 5.35496 19.2061 5.39762 19.0566 5.43154C18.8447 5.47962 15.4703 7.71 8.93326 12.1227C7.97543 12.7804 7.10787 13.1009 6.33055 13.0841C5.47363 13.0656 3.82525 12.5995 2.59985 12.2012C1.09685 11.7127 -0.0977048 11.4543 0.00631425 10.6246C0.0604938 10.1924 0.655644 9.75044 1.79176 9.29865Z" fill="white" />
                      </svg>
                   </div>
                </div>
             </div>
 
             <div className="form__wrapper">
-               <div className="form-inner__wrapper">
-                  <div className="single-form__field">
-                     <div className="field__title">
-                        <label htmlFor="name" className='font-primary-500'>Name</label>
+               <form ref={formRef} onSubmit={formHandleSubmit}>
+                  <div className="form-inner__wrapper">
+                     <div className="single-form__field">
+                        <div className="field__title">
+                           <label htmlFor="name" className='font-primary-500'>Name</label>
+                        </div>
+                        <div className="field-input__wrapper">
+                           <input
+                              type="text"
+                              id='name'
+                              name='name'
+                              value={contactData.name}
+                              placeholder='John Smith'
+                              className='font-primary-500'
+                              autoComplete='off'
+                              onChange={formHandleChange}
+                              minLength={3}
+                              maxLength={50}
+                           />
+                        </div>
                      </div>
-                     <div className="field-input__wrapper">
-                        <input type="text" id='name' placeholder='John Smith' className='font-primary-500' />
+                     <div className="single-form__field">
+                        <div className="field__title">
+                           <label htmlFor="email" className='font-primary-500'>E-mail</label>
+                        </div>
+                        <div className="field-input__wrapper">
+                           <input
+                              type="email"
+                              id='email'
+                              name='email'
+                              value={contactData.email}
+                              placeholder='john@gmail.com'
+                              autoComplete='off'
+                              className='font-primary-500'
+                              onChange={formHandleChange}
+                              maxLength={72}
+                           />
+                        </div>
                      </div>
+                     <div className="single-form__field">
+                        <div className="field__title">
+                           <label htmlFor="message" className='font-primary-500'>Message</label>
+                        </div>
+                        <div className="field-input__wrapper">
+                           <input
+                              value={contactData.message}
+                              name="message"
+                              id="message"
+                              type='text'
+                              onChange={formHandleChange}
+                              placeholder='Write your message...'
+                              className='font-primary-500'
+                              minLength={30}
+                              maxLength={500}
+                           />
+                        </div>
+                     </div>
+                     <DoubleLayerButtonHoverAnim
+                        text={'Book a Consultation'}
+                        font={'font-primary-500'}
+                        color={submitDisabled ? 'font-disabled' : 'font-white'}
+                        bg={submitDisabled ? 'bg-disabled' : 'bg-blue-outline'}
+                        bgHover={submitDisabled ? '' : 'bg-hover-primary'}
+                        onClick={formHandleSubmit}
+                        icon={'arrow-right-up'}
+                     />
                   </div>
-                  <div className="single-form__field">
-                     <div className="field__title">
-                        <label htmlFor="email" className='font-primary-500'>E-mail</label>
-                     </div>
-                     <div className="field-input__wrapper">
-                        <input type="text" id='email' placeholder='john@gmail.com' className='font-primary-500' />
-                     </div>
-                  </div>
-                  <div className="single-form__field">
-                     <div className="field__title">
-                        <label htmlFor="message" className='font-primary-500'>Message</label>
-                     </div>
-                     <div className="field-input__wrapper">
-                        <input type="text" id='message' placeholder='Write your message...' className='font-primary-500' />
-                     </div>
-                  </div>
-                  <DoubleLayerButtonHoverAnim
-                     text={'Book a Consultation'}
-                     font={'font-primary-500'}
-                     color={'font-white'}
-                     bg={'bg-blue-outline'}
-                     bgHover={'bg-hover-primary'}
-                     href={'https://google.com/'}
-                     target={'_blank'}
-                     icon={'arrow-right-up'}
-                  />
-               </div>
+               </form>
             </div>
          </div>
       </div>

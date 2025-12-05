@@ -12,7 +12,7 @@ const cards1 = [
    {
       title: 'Smart Contract Engineering',
       desc: 'Secure, scalable, and audit-ready smart contract builds. From standard tokens to custom mechanics, we write and deploy contracts that just work.',
-      img: '/images/what-we-offer/1.png',
+      img: '/images/what-we-offer/1.jpg',
       width: 1456,
       height: 640,
       target: '.single-service__block-1',
@@ -37,7 +37,7 @@ const cards1 = [
    {
       title: 'Token Launch Infrastructure',
       desc: 'Launch faster with fully-automated, contract-powered token flows. From bonding curves to affiliate systems we help you deploy and scale token ecosystems.',
-      img: '/images/what-we-offer/2.png',
+      img: '/images/what-we-offer/2.jpg',
       width: 1000,
       height: 640,
       target: '.single-service__block-1',
@@ -65,7 +65,7 @@ const cards2 = [
    {
       title: 'Post-Launch Support & Growth Engineering',
       desc: 'Keep your project growing long after launch with upgrades, automation, and real-time support. From contract maintenance to new feature rollouts, we make sure your project stays secure, scalable, and relevant.',
-      img: '/images/what-we-offer/3.png',
+      img: '/images/what-we-offer/3.jpg',
       width: 1000,
       height: 640,
       target: '.single-service__block-2',
@@ -90,7 +90,7 @@ const cards2 = [
    {
       title: 'Protocol & DApp Development',
       desc: 'End-to-end dApp and protocol builds for real users and real demand. We ship full-stack Web3 apps with on-chain logic, wallet integration, and scalable backends.',
-      img: '/images/what-we-offer/4.png',
+      img: '/images/what-we-offer/4.jpg',
       width: 1000,
       height: 640,
       target: '.single-service__block-2',
@@ -114,7 +114,7 @@ const cards2 = [
    {
       title: 'Custom Tools & Automations',
       desc: 'Need something specific for your token? We build bots, scripts, and dapps that automate and simplify your workflow.',
-      img: '/images/what-we-offer/5.png',
+      img: '/images/what-we-offer/5.jpg',
       width: 1000,
       height: 640,
       target: '.single-service__block-2',
@@ -337,123 +337,123 @@ export default function WhatWeOffer() {
    //    }
    // }, { scope: serviceModal, dependencies: [serviceModalIsActive] });
 
-   useEffect(() => {
-      const modal1 = document.querySelectorAll('.home-what-we-offer__wrapper .single-service__block')[0];
-      const modal1Title = modal1.querySelectorAll('h2');
-      const modal1Descs = gsap.utils.toArray('span .normal-text', modal1);
-      const modal1DescsIcon = gsap.utils.toArray('span .icon', modal1);
-      const modal2 = document.querySelectorAll('.home-what-we-offer__wrapper .single-service__block')[1];
-      const modal2Title = modal2.querySelectorAll('h2');
-      const modal2Descs = gsap.utils.toArray('span .normal-text', modal2);
-      const modal2DescsIcon = gsap.utils.toArray('span .icon', modal2);
+   // useEffect(() => {
+   //    const modal1 = document.querySelectorAll('.home-what-we-offer__wrapper .single-service__block')[0];
+   //    const modal1Title = modal1.querySelectorAll('h2');
+   //    const modal1Descs = gsap.utils.toArray('span .normal-text', modal1);
+   //    const modal1DescsIcon = gsap.utils.toArray('span .icon', modal1);
+   //    const modal2 = document.querySelectorAll('.home-what-we-offer__wrapper .single-service__block')[1];
+   //    const modal2Title = modal2.querySelectorAll('h2');
+   //    const modal2Descs = gsap.utils.toArray('span .normal-text', modal2);
+   //    const modal2DescsIcon = gsap.utils.toArray('span .icon', modal2);
 
-      console.log(modal1);
-      if (!modal1 || !modal2) return;
+   //    console.log(modal1);
+   //    if (!modal1 || !modal2) return;
 
-      if (serviceModal1IsActive) {
-         gsap.to(modal1, {
-            width: '100%',
-            height: '100%',
-            overflow: 'auto',
-            duration: .75,
-            ease: 'power1.out'
-         });
-         gsap.to(modal1Title, {
-            opacity: 1,
-            filter: 'blur(0px)',
-            duration: .5,
-            delay: .5,
-         });
-         gsap.to(modal1Descs, {
-            opacity: .5,
-            filter: 'blur(0px)',
-            duration: .5,
-            delay: .5,
-            stagger: 0.025
-         });
-         gsap.to(modal1DescsIcon, {
-            opacity: 1,
-            filter: 'blur(0px)',
-            duration: .5,
-            delay: .75,
-            stagger: 0.025
-         });
-      } else {
-         gsap.to(modal1, {
-            width: 0,
-            height: 0,
-            overflow: 'hidden',
-            duration: .5,
-            ease: 'power1.out'
-         });
-         gsap.to(modal1Title, {
-            opacity: 0,
-            filter: 'blur(10px)',
-            duration: 0,
-         });
-         gsap.to(modal1Descs, {
-            opacity: 0,
-            filter: 'blur(10px)',
-         });
-         gsap.to(modal1DescsIcon, {
-            opacity: 0,
-            filter: 'blur(10px)',
-            duration: 0,
-         })
-      }
+   //    if (serviceModal1IsActive) {
+   //       gsap.to(modal1, {
+   //          width: '100%',
+   //          height: '100%',
+   //          overflow: 'auto',
+   //          duration: .75,
+   //          ease: 'power1.out'
+   //       });
+   //       gsap.to(modal1Title, {
+   //          opacity: 1,
+   //          filter: 'blur(0px)',
+   //          duration: .5,
+   //          delay: .5,
+   //       });
+   //       gsap.to(modal1Descs, {
+   //          opacity: .5,
+   //          filter: 'blur(0px)',
+   //          duration: .5,
+   //          delay: .5,
+   //          stagger: 0.025
+   //       });
+   //       gsap.to(modal1DescsIcon, {
+   //          opacity: 1,
+   //          filter: 'blur(0px)',
+   //          duration: .5,
+   //          delay: .75,
+   //          stagger: 0.025
+   //       });
+   //    } else {
+   //       gsap.to(modal1, {
+   //          width: 0,
+   //          height: 0,
+   //          overflow: 'hidden',
+   //          duration: .5,
+   //          ease: 'power1.out'
+   //       });
+   //       gsap.to(modal1Title, {
+   //          opacity: 0,
+   //          filter: 'blur(10px)',
+   //          duration: 0,
+   //       });
+   //       gsap.to(modal1Descs, {
+   //          opacity: 0,
+   //          filter: 'blur(10px)',
+   //       });
+   //       gsap.to(modal1DescsIcon, {
+   //          opacity: 0,
+   //          filter: 'blur(10px)',
+   //          duration: 0,
+   //       })
+   //    }
 
-      if (serviceModal2IsActive) {
-         gsap.to(modal2, {
-            width: '100%',
-            height: '100%',
-            overflow: 'auto',
-            duration: .75,
-            ease: 'power1.out'
-         });
-         gsap.to(modal2Title, {
-            opacity: 1,
-            filter: 'blur(0px)',
-            duration: .5,
-            delay: .5,
-         });
-         gsap.to(modal2Descs, {
-            opacity: .5,
-            filter: 'blur(0px)',
-            duration: .5,
-            delay: .5,
-            stagger: 0.025
-         });
-         gsap.to(modal2DescsIcon, {
-            opacity: 1,
-            filter: 'blur(0px)',
-            duration: .5,
-            delay: .75,
-            stagger: 0.025
-         });
-      } else {
-         gsap.to(modal2, {
-            width: 0,
-            height: 0,
-            overflow: 'hidden',
-            duration: .5,
-            ease: 'power1.out'
-         });
-         gsap.to(modal2Title, {
-            opacity: 0,
-            filter: 'blur(10px)',
-            duration: 0,
-         });
-         gsap.to(modal2Descs, {
-            opacity: 0,
-            filter: 'blur(10px)',
-         });
-         gsap.to(modal2DescsIcon, {
-            opacity: 0,
-            filter: 'blur(10px)',
-            duration: 0,
-         })
-      }
-   }, [serviceModal1IsActive, serviceModal2IsActive]);
+   //    if (serviceModal2IsActive) {
+   //       gsap.to(modal2, {
+   //          width: '100%',
+   //          height: '100%',
+   //          overflow: 'auto',
+   //          duration: .75,
+   //          ease: 'power1.out'
+   //       });
+   //       gsap.to(modal2Title, {
+   //          opacity: 1,
+   //          filter: 'blur(0px)',
+   //          duration: .5,
+   //          delay: .5,
+   //       });
+   //       gsap.to(modal2Descs, {
+   //          opacity: .5,
+   //          filter: 'blur(0px)',
+   //          duration: .5,
+   //          delay: .5,
+   //          stagger: 0.025
+   //       });
+   //       gsap.to(modal2DescsIcon, {
+   //          opacity: 1,
+   //          filter: 'blur(0px)',
+   //          duration: .5,
+   //          delay: .75,
+   //          stagger: 0.025
+   //       });
+   //    } else {
+   //       gsap.to(modal2, {
+   //          width: 0,
+   //          height: 0,
+   //          overflow: 'hidden',
+   //          duration: .5,
+   //          ease: 'power1.out'
+   //       });
+   //       gsap.to(modal2Title, {
+   //          opacity: 0,
+   //          filter: 'blur(10px)',
+   //          duration: 0,
+   //       });
+   //       gsap.to(modal2Descs, {
+   //          opacity: 0,
+   //          filter: 'blur(10px)',
+   //       });
+   //       gsap.to(modal2DescsIcon, {
+   //          opacity: 0,
+   //          filter: 'blur(10px)',
+   //          duration: 0,
+   //       })
+   //    }
+   // }, [serviceModal1IsActive, serviceModal2IsActive]);
 
    const modalClickHandler = (item, index) => {
       if (index === 0) {
@@ -483,7 +483,7 @@ export default function WhatWeOffer() {
 
                <div className="cards__wrapper">
                   <div className="cards-row__wrapper">
-                     <div className="single-service__block single-service__block-1">
+                     {/* <div className="single-service__block single-service__block-1">
                         <div className="close__button" onClick={() => setServiceModal1IsActive(false)}>
                            <div className="line line-1"></div>
                            <div className="line line-2"></div>
@@ -492,7 +492,7 @@ export default function WhatWeOffer() {
                            <h2 className='font-primary-600 font-white'>{serviceModal1Data?.title}</h2>
                            <span className='font-primary-400' dangerouslySetInnerHTML={{ __html: serviceModal1Data?.modalData }}></span>
                         </div>
-                     </div>
+                     </div> */}
 
                      {
                         cards1.map((item, i) => (
@@ -525,7 +525,7 @@ export default function WhatWeOffer() {
                                        <h5 className='font-secondary-600 font-white'>{item.title}</h5>
                                        <span className='font-primary-400'>{item.desc}</span>
                                     </div>
-                                    <span className='read-more font-primary-500 font-white' onClick={() => modalClickHandler(item, 0)}>Read More</span>
+                                    {/* <span className='read-more font-primary-500 font-white' onClick={() => modalClickHandler(item, 0)}>Read More</span> */}
                                  </div>
                               </div>
                            </div>
@@ -534,7 +534,7 @@ export default function WhatWeOffer() {
                   </div>
 
                   <div className="cards-row__wrapper">
-                     <div className="single-service__block single-service__block-2">
+                     {/* <div className="single-service__block single-service__block-2">
                         <div className="close__button" onClick={() => setServiceModal2IsActive(false)}>
                            <div className="line line-1"></div>
                            <div className="line line-2"></div>
@@ -543,7 +543,7 @@ export default function WhatWeOffer() {
                            <h2 className='font-primary-600 font-white'>{serviceModal2Data?.title}</h2>
                            <span className='font-primary-400' dangerouslySetInnerHTML={{ __html: serviceModal2Data?.modalData }}></span>
                         </div>
-                     </div>
+                     </div> */}
                      {
                         cards2.map((item, i) => (
                            <div onMouseMove={handleMouseMove} className="single-card__layer" key={i}>
@@ -575,7 +575,7 @@ export default function WhatWeOffer() {
                                        <h5 className='font-secondary-600 font-white'>{item.title}</h5>
                                        <span className='font-primary-400'>{item.desc}</span>
                                     </div>
-                                    <span className='read-more font-primary-500 font-white' onClick={() => modalClickHandler(item, 1)}>Read More</span>
+                                    {/* <span className='read-more font-primary-500 font-white' onClick={() => modalClickHandler(item, 1)}>Read More</span> */}
                                  </div>
                               </div>
                            </div>

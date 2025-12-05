@@ -39,7 +39,7 @@ export default function RootLayout({ children }) {
         <meta name="apple-mobile-web-app-title" content="Cooderz" />
         <meta name="apple-mobile-web-app-status-bar-style" content="black" />
 
-        <link rel="shortcut icon" href="/favicon/logo.svg" background type="image/x-icon" />
+        <link rel="shortcut icon" href="/favicon/logo.svg" type="image/x-icon" />
         <link rel="apple-touch-icon" sizes="180x180" href="/favicon/logo.svg" />
 
         <link rel="preconnect" href="https://fonts.googleapis.com" />

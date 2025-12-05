@@ -6,40 +6,6 @@ import gsap from 'gsap';
 import { useGSAP } from '@gsap/react';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
-const cards1 = [
-   {
-      title: 'Token Creation & Contract Setup',
-      desc: 'From token logic to smart contracts, we handle the tech part so you can focus on the launch. Everything built to run smoothly from day one.',
-      img: '/images/what-we-offer/1.png',
-      width: 1456,
-      height: 640
-   },
-   {
-      title: 'Launch Strategy & Deployment',
-      desc: 'We help you shape your launch plan and take care of everything technical — contracts, setup, and deployment.',
-      img: '/images/what-we-offer/2.png',
-      width: 1000,
-      height: 640
-   },
-];
-
-const cards2 = [
-   {
-      title: 'Post-Launch Support & Growth Engineering',
-      desc: 'We monitor, optimize, and upgrade. Think of us as your long-term tech team, keeping everything running.',
-      img: '/images/what-we-offer/3.png',
-      width: 1000,
-      height: 640
-   },
-   {
-      title: 'Custom Tools & Automations',
-      desc: 'Need something specific for your token? We build bots, scripts, and dapps that automate and simplify your workflow.',
-      img: '/images/what-we-offer/4.png',
-      width: 1456,
-      height: 640
-   }
-];
-
 gsap.registerPlugin(ScrollTrigger);
 
 export default function Projects() {
@@ -191,23 +157,6 @@ export default function Projects() {
                <div className="single-card__item" onMouseMove={handleMouseMove}>
                   <div className="card-image__wrapper">
                      <Image
-                        src={'/images/case-studies/1.png'}
-                        width={129}
-                        height={161}
-                        alt='Cooderz'
-                        quality={100}
-                        draggable={false}
-                     />
-                  </div>
-                  <div className="card-content__wrapper">
-                     <h5 className='font-secondary-600 font-white'>Neiro</h5>
-                     <span className='font-primary-400'>ETH | 289 ATH</span>
-                  </div>
-               </div>
-
-               <div className="single-card__item" onMouseMove={handleMouseMove}>
-                  <div className="card-image__wrapper">
-                     <Image
                         src={'/images/case-studies/2.png'}
                         width={143}
                         height={142}
@@ -218,7 +167,24 @@ export default function Projects() {
                   </div>
                   <div className="card-content__wrapper">
                      <h5 className='font-secondary-600 font-white'>Ponke</h5>
-                     <span className='font-primary-400'>SOL | 596 ATH</span>
+                     <span className='font-primary-400'>SOL | 596M ATH</span>
+                  </div>
+               </div>
+
+               <div className="single-card__item" onMouseMove={handleMouseMove}>
+                  <div className="card-image__wrapper">
+                     <Image
+                        src={'/images/case-studies/1.png'}
+                        width={129}
+                        height={161}
+                        alt='Cooderz'
+                        quality={100}
+                        draggable={false}
+                     />
+                  </div>
+                  <div className="card-content__wrapper">
+                     <h5 className='font-secondary-600 font-white'>Neiro</h5>
+                     <span className='font-primary-400'>ETH | 289M ATH</span>
                   </div>
                </div>
 
@@ -235,7 +201,7 @@ export default function Projects() {
                   </div>
                   <div className="card-content__wrapper">
                      <h5 className='font-secondary-600 font-white'>Ovpp</h5>
-                     <span className='font-primary-400'>ETH | 226 ATH</span>
+                     <span className='font-primary-400'>ETH | 226M ATH</span>
                   </div>
                </div>
 

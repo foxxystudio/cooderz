@@ -118,7 +118,7 @@
             }
 
             // 1 ve 3. kart normal
-            &:nth-child(1),
+            &:nth-child(2),
             &:nth-child(3) {
                border: 2px solid #343434;
                background: #010715;
@@ -133,7 +133,7 @@
             }
 
             // ★★★ Orta kart — gradient border (çalışan versiyon)
-            &:nth-child(2) {
+            &:nth-child(1) {
                background: #010715;
                box-shadow:
                   -30px -30px 100px rgba(63, 194, 172, 0.20) inset,
