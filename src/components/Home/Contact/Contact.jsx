@@ -1,5 +1,5 @@
 'use client';
-import React, { useRef, useState } from 'react';
+import React, { useRef, useState, useEffect } from 'react';
 import './style.scss';
 import DoubleLayerButtonHoverAnim from '@/components/DoubleLayerButtonHoveAnim';
 import { useGSAP } from '@gsap/react';
@@ -123,7 +123,7 @@ export default function Contact() {
       const requiredFilled =
          updatedData.name.trim() !== "" &&
          updatedData.email.trim() !== "";
-         setSubmitDisabled(requiredFilled ? false : true);
+      setSubmitDisabled(requiredFilled ? false : true);
    }
 
    /// Form Handle Submit
@@ -163,6 +163,53 @@ export default function Contact() {
       }
    };
 
+   /// Show up success popup after successful form submit
+   useEffect(() => {
+      if (formSubmitSuccess) {
+         const popup = document.querySelector('.home-contact__wrapper .form-success__popup');
+         const popupTitle = popup.querySelector('h2');
+         const popupDesc = popup.querySelector('.desc');
+         const popupBtn = popup.querySelector('.popup-btn__layer');
+
+         const anim1 = gsap.to(popup, {
+            opacity: 1,
+            pointerEvents: 'all',
+            duration: .75,
+            ease: 'power2.out',
+         });
+
+         const anim2 = gsap.to(popupTitle, {
+            opacity: 1,
+            duration: .75,
+            ease: 'power2.in',
+            delay: .75,
+         });
+
+         const anim3 = gsap.to(popupDesc, {
+            opacity: 1,
+            duration: .75,
+            ease: 'power2.in',
+            delay: 1,
+         });
+
+         const anim4 = gsap.to(popupBtn, {
+            opacity: 1,
+            duration: .75,
+            ease: 'power2.in',
+            delay: 1.25,
+         });
+
+         return () => {
+            [
+               anim1,
+               anim2,
+               anim3,
+               anim4
+            ].forEach(anim => anim.kill());
+         };
+      }
+   }, [formSubmitSuccess]);
+
    /// Reload Page Btn func After Success
    const pageReloadAfterSuccess = (e) => {
       e.preventDefault();
@@ -196,6 +243,23 @@ export default function Contact() {
             </div>
 
             <div className="form__wrapper">
+               <div className="form-success__popup">
+                  <div className="success-popup-inner__wrapper">
+                     <h2 className='font-primary-600 font-white'>Thanks for reaching out!</h2>
+                     <span className="desc font-primary-400 font-white">We’ve received your message and will get back to you soon.</span>
+                     <div className="popup-btn__layer">
+                        <DoubleLayerButtonHoverAnim
+                           text={'Reload Page'}
+                           font={'font-primary-500'}
+                           color={'font-white'}
+                           bg={'bg-blue-outline'}
+                           bgHover={'bg-hover-primary'}
+                           onClick={pageReloadAfterSuccess}
+                        />
+                     </div>
+                  </div>
+               </div>
+
                <form ref={formRef} onSubmit={formHandleSubmit}>
                   <div className="form-inner__wrapper">
                      <div className="single-form__field">

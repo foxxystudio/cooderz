@@ -179,6 +179,15 @@
       padding: 0 16px;
       height: 58px;
 
+      .menu__wrapper {
+         .menu-inner__wrapper {
+            .btn__wrapper {
+               width: 100%;
+               max-width: 450px;
+            }
+         }
+      }
+
       .navbar-inner__wrapper {
          .logo__wrapper {
             svg {

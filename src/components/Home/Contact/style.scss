@@ -89,7 +89,9 @@
                         opacity: 1;
                      }
                   }
-               };
+               }
+
+               ;
             }
          }
       }
@@ -102,6 +104,66 @@
          background: linear-gradient(180deg, rgba(255, 255, 255, 0.04) 0%, rgba(255, 255, 255, 0.00) 100%);
          opacity: 0;
          will-change: opacity;
+         position: relative;
+         overflow: hidden;
+
+         .form-success__popup {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 2;
+            background: #13141C;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 0 24px;
+            opacity: 0;
+            will-change: opacity;
+            pointer-events: none;
+
+            .success-popup-inner__wrapper {
+               display: flex;
+               flex-direction: column;
+               align-items: center;
+               gap: 20px;
+               max-width: 415px;
+               width: 100%;
+               margin: 0 auto;
+
+               h2 {
+                  font-size: 32px;
+                  line-height: 40px;
+                  text-align: center;
+                  background: linear-gradient(118deg, #626984 -3.24%, #FFF 50.67%);
+                  background-clip: text;
+                  -webkit-background-clip: text;
+                  -webkit-text-fill-color: transparent;
+                  opacity: 0;
+                  will-change: opacity;
+               }
+
+               .desc {
+                  font-size: 16px;
+                  line-height: 26px;
+                  text-align: center;
+                  opacity: 0;
+                  will-change: opacity;
+               }
+
+               .popup-btn__layer {
+                  width: 100%;
+                  opacity: 0;
+                  will-change: opacity;
+                  display: flex;
+
+                  .btn__wrapper {
+                     width: 100%;
+                  }
+               }
+            }
+         }
 
          .form-inner__wrapper {
             width: 100%;
@@ -187,6 +249,22 @@
             max-width: 100%;
             padding: 16px;
             border-radius: 12px;
+
+            .form-success__popup {
+               .success-popup-inner__wrapper {
+                  gap: 16px;
+
+                  h2 {
+                     font-size: 24px;
+                     line-height: 32px;
+                  }
+
+                  .desc {
+                     font-size: 14px;
+                     line-height: 22px;
+                  }
+               }
+            }
 
             .form-inner__wrapper {
                gap: 24px;
