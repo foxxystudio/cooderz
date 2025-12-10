@@ -297,6 +297,8 @@ export default function Contact() {
                               className='font-primary-500'
                               onChange={formHandleChange}
                               maxLength={72}
+                              pattern="^[^@\s]+@[^@\s]+\.[^@\s]+$"
+                              reruired
                            />
                         </div>
                      </div>
