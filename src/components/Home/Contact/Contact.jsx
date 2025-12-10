@@ -298,7 +298,7 @@ export default function Contact() {
                               onChange={formHandleChange}
                               maxLength={72}
                               pattern="^[^@\s]+@[^@\s]+\.[^@\s]+$"
-                              reruired
+                              required
                            />
                         </div>
                      </div>
