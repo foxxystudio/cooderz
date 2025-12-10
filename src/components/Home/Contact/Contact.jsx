@@ -111,8 +111,6 @@ export default function Contact() {
    const formHandleChange = (e) => {
       const { name, value } = e.target;
 
-      console.log(contactData);
-
       const updatedData = {
          ...contactData,
          [name]: value,
@@ -160,7 +158,7 @@ export default function Contact() {
          }
       } catch (err) {
          setSubmitDisabled(false);
-         console.error(err);
+         // console.error(err);
       }
    };
 

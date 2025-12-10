@@ -204,7 +204,6 @@ export default function Projects() {
                      <span className='font-primary-400'>ETH | 226M ATH</span>
                   </div>
                </div>
-
             </div>
          </div>
       </div>
