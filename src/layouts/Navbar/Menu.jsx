@@ -73,7 +73,7 @@ export default function Menu({ menuIsActive, setMenuIsActive }) {
             </div>
 
             <DoubleLayerButtonHoverAnim
-               text={'Book a Consultation'}
+               text={'Get started'}
                font={'font-primary-500'}
                color={'font-white'}
                bg={'bg-blue-outline'}
