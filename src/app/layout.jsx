@@ -42,6 +42,9 @@ export default function RootLayout({ children }) {
         <link rel="shortcut icon" href="/favicon/logo.svg" type="image/x-icon" />
         <link rel="apple-touch-icon" sizes="180x180" href="/favicon/logo.svg" />
 
+        {/* Inlyne Script */}
+        <script src="https://app.inlyne.ai/scripts/preview.js" async></script>
+
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="true" />
         <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@300..700&display=swap" rel="stylesheet" />
